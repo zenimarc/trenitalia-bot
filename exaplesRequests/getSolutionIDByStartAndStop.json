@@ -1,0 +1,17 @@
+{
+  "query": "/Channels.AppApi/rest/transports/search?startlocationid=830001003&endlocationid=830001700&departure_time=2021-10-03T17%3A27%3A37.953Z HTTP/2",
+  "example_response": {
+    "searchId": "27b048594d372aae7b1a26e65cf3c126",
+    "totalSolutions": 24,
+    "expirationDate": "2021-10-03T19:44:08.018+02:00",
+    "searchCriteria": {
+      "adults": 0,
+      "children": 0,
+      "departureTimesStart": "2021-10-03T19:27:37.953+02:00",
+      "travellers": [],
+      "searchType": "SIMPLE",
+      "departure": { "id": 830001003 },
+      "arrival": { "id": 830001700 }
+    }
+  }
+}

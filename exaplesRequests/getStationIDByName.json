@@ -1,0 +1,43 @@
+{
+  "query": "/Channels.AppApi/rest/locations?name=domo&limit=100&multi=true&withbdo=false&zonaFrecce=false HTTP/2",
+  "response_example": [
+    {
+      "timezone": "Europe/Rome",
+      "name": "Domodossola",
+      "aliases": [],
+      "locationId": 830001003,
+      "visible": true,
+      "geographicCoordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+      "attributeValues": [],
+      "bdo": true,
+      "bdoCode": "S01003",
+      "multistation": false,
+      "zonaFrecce": false
+    },
+    {
+      "timezone": "Europe/Rome",
+      "name": "Domont",
+      "aliases": [],
+      "locationId": 870027643,
+      "visible": true,
+      "geographicCoordinates": { "longitude": 2.337778, "latitude": 49.032778 },
+      "attributeValues": [],
+      "bdo": false,
+      "multistation": false,
+      "zonaFrecce": false
+    },
+    {
+      "timezone": "Europe/Rome",
+      "name": "Milano Domodossola",
+      "aliases": [],
+      "locationId": 830025750,
+      "visible": true,
+      "geographicCoordinates": { "longitude": 9.161974, "latitude": 45.480971 },
+      "attributeValues": [],
+      "bdo": true,
+      "bdoCode": "S01067",
+      "multistation": false,
+      "zonaFrecce": false
+    }
+  ]
+}

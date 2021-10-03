@@ -1,0 +1,2158 @@
+{
+  "query": "/Channels.AppApi/rest/search/27b048594d372aae7b1a26e65cf3c126/solutions?orderby",
+  "response_example": [
+    {
+      "date": "2021-10-03T00:00:00.000+02:00",
+      "id": { "travelSolutionId": 1 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN", "UNCLASSIFIED"],
+      "tagValues": [],
+      "xmlId": "x7dac74e9-b31b-4b02-a5b4-b4dca362b83d",
+      "departurePlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "Milan Main Station                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+          { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+          { "name": "Milan Main Station                 \r", "lang": "EN" },
+          { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "departureTime": "2021-10-03T20:01:00.000+02:00",
+      "arrivalTime": "2021-10-03T22:34:00.000+02:00",
+      "totalDuration": 9180000,
+      "transportTypes": ["TRAIN", "UNCLASSIFIED"],
+      "classificationAcronyms": ["RE", "UB"],
+      "classificationAcronymsSequence": ["RE", "UB"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "x6d3dd0f8-f488-45af-9709-e33838ca0d4d",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Porta Garibaldi",
+            "aliases": [
+              { "name": "Milan Porta Garibaldi              \r", "lang": "EN" },
+              { "name": "Mailand Porta Garibaldi            \r", "lang": "DE" },
+              { "name": "Milan Porta Garibaldi              \r", "lang": "FR" },
+              { "name": "MilÃ n Porta Garibaldi", "lang": "ES" }
+            ],
+            "locationId": 830001645,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.187689,
+              "latitude": 45.48492
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-10-03T20:01:00.000+02:00",
+          "arrivalTime": "2021-10-03T22:14:00.000+02:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["RE"],
+          "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "10243",
+            "denomination": "",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "Regionale",
+              "acronym": "RE",
+              "id": 5,
+              "uicCode": 0,
+              "uicAbbreviation": "REG"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "10243" },
+            "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+            "date": "2021-10-03T00:00:00.000+02:00",
+            "xmlId": "x80aa5d7c-227c-3ccb-983e-bb3e8c6e8de6"
+          },
+          "seatMap": false,
+          "showSeatmapStatus": "NONE",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        },
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "x5e4af43c-1dcb-4c55-a2bd-028a65414fe1",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Porta Garibaldi",
+            "aliases": [
+              { "name": "Milan Porta Garibaldi              \r", "lang": "EN" },
+              { "name": "Mailand Porta Garibaldi            \r", "lang": "DE" },
+              { "name": "Milan Porta Garibaldi              \r", "lang": "FR" },
+              { "name": "MilÃ n Porta Garibaldi", "lang": "ES" }
+            ],
+            "locationId": 830001645,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.187689,
+              "latitude": 45.48492
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+              { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+              { "name": "Milan Main Station                 \r", "lang": "EN" },
+              { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-10-03T22:19:00.000+02:00",
+          "arrivalTime": "2021-10-03T22:34:00.000+02:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["UB"],
+          "trainLogoInformations": [{ "acronym": "UB", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "Urb",
+            "denomination": "UrbV",
+            "description": "Urban Means (not included in the price)",
+            "classification": {
+              "type": "UNCLASSIFIED",
+              "classification": "Urbano",
+              "acronym": "UB",
+              "id": 0,
+              "uicCode": 0
+            },
+            "trainLogoInformation": { "acronym": "UB", "attributes": [] },
+            "date": "2021-10-03T00:00:00.000+02:00"
+          },
+          "seatMap": false,
+          "showSeatmapStatus": "NONE",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        },
+        {
+          "type": "SOLUTION_SHOP",
+          "idXml": "x2164d314-73cd-4cc1-aad2-f9858237b51b",
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "travellersWithAncillaries": []
+        }
+      ],
+      "travelSolutionMessages": [],
+      "saleable": false,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "soldOut": false,
+      "inhibited": true,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": {},
+      "trainLogoInformations": [
+        { "acronym": "RE", "attributes": [] },
+        { "acronym": "UB", "attributes": [] }
+      ],
+      "additionalMessages": [],
+      "materialized": false
+    },
+    {
+      "date": "2021-10-03T00:00:00.000+02:00",
+      "id": { "travelSolutionId": 2 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "x189dce24-2c57-4ee5-872f-038acd4cfe23",
+      "departurePlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "Milan Main Station                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+          { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+          { "name": "Milan Main Station                 \r", "lang": "EN" },
+          { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "departureTime": "2021-10-03T20:17:00.000+02:00",
+      "arrivalTime": "2021-10-03T21:40:00.000+02:00",
+      "totalDuration": 4980000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["EC"],
+      "classificationAcronymsSequence": ["EC"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "xa7bb3ce0-0210-4c99-b621-dbfc14f38ab1",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+              { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+              { "name": "Milan Main Station                 \r", "lang": "EN" },
+              { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-10-03T20:17:00.000+02:00",
+          "arrivalTime": "2021-10-03T21:40:00.000+02:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["EC"],
+          "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "59",
+            "denomination": "",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "EuroCity",
+              "acronym": "EC",
+              "id": 13,
+              "uicCode": 50,
+              "uicAbbreviation": "EC"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "59" },
+            "trainLogoInformation": { "acronym": "EC", "attributes": [] },
+            "date": "2021-10-03T00:00:00.000+02:00",
+            "xmlId": "x112ac177-8c2f-3633-83b5-ffb45564888c"
+          },
+          "seatMap": true,
+          "showSeatmapStatus": "OPTIONAL",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        },
+        {
+          "type": "SOLUTION_SHOP",
+          "idXml": "x4f93701a-85c7-4c31-a542-70a7a6a245b3",
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "travellersWithAncillaries": []
+        }
+      ],
+      "travelSolutionMessages": [],
+      "saleable": false,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "soldOut": false,
+      "inhibited": true,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": {},
+      "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+      "additionalMessages": [],
+      "materialized": false
+    },
+    {
+      "date": "2021-10-03T00:00:00.000+02:00",
+      "id": { "travelSolutionId": 3 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "x1a41cb3e-97cb-4ea0-ad6c-a77ecbe0226f",
+      "departurePlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "Milan Main Station                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+          { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+          { "name": "Milan Main Station                 \r", "lang": "EN" },
+          { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "departureTime": "2021-10-03T20:56:00.000+02:00",
+      "arrivalTime": "2021-10-03T22:35:00.000+02:00",
+      "totalDuration": 5940000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["RE"],
+      "classificationAcronymsSequence": ["RE"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "xba35a561-4f92-475e-867b-5088f3e03e74",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+              { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+              { "name": "Milan Main Station                 \r", "lang": "EN" },
+              { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-10-03T20:56:00.000+02:00",
+          "arrivalTime": "2021-10-03T22:35:00.000+02:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["RE"],
+          "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "2443",
+            "denomination": "",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "Regionale",
+              "acronym": "RE",
+              "id": 5,
+              "uicCode": 0,
+              "uicAbbreviation": "REG"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "2443" },
+            "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+            "date": "2021-10-03T00:00:00.000+02:00",
+            "xmlId": "x488964f9-a6dd-3e63-925d-d0d5c7485c8c"
+          },
+          "seatMap": false,
+          "showSeatmapStatus": "NONE",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        },
+        {
+          "type": "SOLUTION_SHOP",
+          "idXml": "xda5811e0-6a06-478c-8dde-ac17d275100b",
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "travellersWithAncillaries": []
+        }
+      ],
+      "travelSolutionMessages": [],
+      "saleable": false,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "soldOut": false,
+      "inhibited": true,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": {},
+      "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+      "additionalMessages": [],
+      "materialized": false
+    },
+    {
+      "date": "2021-10-03T00:00:00.000+02:00",
+      "id": { "travelSolutionId": 4 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN", "UNCLASSIFIED"],
+      "tagValues": [],
+      "xmlId": "x990ba494-50e2-40c9-b34b-294cd406e2ee",
+      "departurePlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "Milan Main Station                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+          { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+          { "name": "Milan Main Station                 \r", "lang": "EN" },
+          { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "departureTime": "2021-10-03T20:56:00.000+02:00",
+      "arrivalTime": "2021-10-04T00:31:00.000+02:00",
+      "totalDuration": 12900000,
+      "transportTypes": ["TRAIN", "TRAIN", "UNCLASSIFIED"],
+      "classificationAcronyms": ["SU", "RE", "UB"],
+      "classificationAcronymsSequence": ["RE", "SU", "UB"],
+      "solutionNodes": [
+        {
+          "type": "ROUTE_SEGMENT",
+          "idXml": "x6dc1fd02-f690-47d7-8cf8-0080ff8a6aea",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Porta Garibaldi",
+            "aliases": [
+              { "name": "Milan Porta Garibaldi              \r", "lang": "EN" },
+              { "name": "Mailand Porta Garibaldi            \r", "lang": "DE" },
+              { "name": "Milan Porta Garibaldi              \r", "lang": "FR" },
+              { "name": "MilÃ n Porta Garibaldi", "lang": "ES" }
+            ],
+            "locationId": 830001645,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.187689,
+              "latitude": 45.48492
+            },
+            "attributeValues": []
+          },
+          "subSegments": [
+            {
+              "type": "SOLUTION_SEGMENT",
+              "idXml": "x3fed656d-ead2-4912-89fb-e646eb59b242",
+              "startLocation": {
+                "timezone": "Europe/Rome",
+                "name": "Domodossola",
+                "aliases": [],
+                "locationId": 830001003,
+                "visible": true,
+                "geographicCoordinates": {
+                  "longitude": 8.296686,
+                  "latitude": 46.115431
+                },
+                "attributeValues": []
+              },
+              "endLocation": {
+                "timezone": "Europe/Rome",
+                "name": "Rho-Fiera Milano",
+                "aliases": [],
+                "locationId": 830001039,
+                "visible": true,
+                "geographicCoordinates": {
+                  "longitude": 9.088039,
+                  "latitude": 45.521264
+                },
+                "attributeValues": []
+              },
+              "departureTime": "2021-10-03T20:56:00.000+02:00",
+              "arrivalTime": "2021-10-03T22:20:00.000+02:00",
+              "physicalDistance": 0,
+              "subSegments": [],
+              "solutionServices": [
+                {
+                  "catalogService": {
+                    "id": 201,
+                    "type": "SEAT",
+                    "name": "RE 02 CLASSE",
+                    "displayName": "2Âª CLASSE",
+                    "descriptionShort": "",
+                    "descriptionStandard": "",
+                    "descriptionExtended": "",
+                    "saleCompany": {
+                      "companyName": "Trenitalia",
+                      "corporateDesignation": "S.p.A.",
+                      "id": "0083",
+                      "logoId": 68
+                    },
+                    "selectionTravellerParameters": [],
+                    "issueTravellerParameters": [
+                      {
+                        "displayName": "NAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 10,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      },
+                      {
+                        "displayName": "SURNAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 11,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      }
+                    ],
+                    "selectionServiceParameters": [],
+                    "issueServiceParameters": [],
+                    "mandatoryInvoice": false,
+                    "multiselection": true,
+                    "attributes": [
+                      {
+                        "name": "BRAND",
+                        "values": [
+                          {
+                            "id": 28,
+                            "value": "REGIONALE",
+                            "displayName": "Regional",
+                            "displayOrder": 7
+                          }
+                        ],
+                        "status": "OFFERED"
+                      },
+                      {
+                        "name": "LEVEL",
+                        "values": [
+                          {
+                            "id": 27,
+                            "value": "2Â° Classe",
+                            "displayName": "2nd Class",
+                            "displayOrder": 6
+                          }
+                        ],
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "availableServiceId": 20,
+                    "status": "OFFERED"
+                  },
+                  "available": false,
+                  "offersNumber": 0
+                },
+                {
+                  "catalogService": {
+                    "id": 30891,
+                    "type": "SEAT",
+                    "name": "02-CS-SMARTCARD-REG",
+                    "displayName": "2Âª CLASSE SM",
+                    "descriptionShort": "",
+                    "descriptionStandard": "",
+                    "descriptionExtended": "",
+                    "saleCompany": {
+                      "companyName": "Trenitalia",
+                      "corporateDesignation": "S.p.A.",
+                      "id": "0083",
+                      "logoId": 68
+                    },
+                    "selectionTravellerParameters": [],
+                    "issueTravellerParameters": [],
+                    "selectionServiceParameters": [],
+                    "issueServiceParameters": [
+                      {
+                        "displayName": "SMART_CARD_ISSUER",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": false,
+                          "typeDefinition": {
+                            "enumeration": ["TRENITALIA", "ALTRO"],
+                            "baseType": "STRING",
+                            "defaultValue": "TRENITALIA"
+                          },
+                          "hidden": true,
+                          "id": 155
+                        },
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "mandatoryInvoice": false,
+                    "multiselection": true,
+                    "attributes": [
+                      {
+                        "name": "BRAND",
+                        "values": [
+                          {
+                            "id": 28,
+                            "value": "REGIONALE",
+                            "displayName": "Regional",
+                            "displayOrder": 7
+                          }
+                        ],
+                        "status": "OFFERED"
+                      },
+                      {
+                        "name": "LEVEL",
+                        "values": [
+                          {
+                            "id": 27,
+                            "value": "2Â° Classe",
+                            "displayName": "2nd Class",
+                            "displayOrder": 6
+                          }
+                        ],
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "availableServiceId": 20,
+                    "status": "OFFERED"
+                  },
+                  "available": false,
+                  "offersNumber": 0
+                },
+                {
+                  "catalogService": {
+                    "id": 9000201,
+                    "type": "SEAT",
+                    "name": "TRN-RE 02 CLASSE",
+                    "displayName": "2Âª CLASSE",
+                    "descriptionShort": "",
+                    "descriptionStandard": "",
+                    "descriptionExtended": "",
+                    "saleCompany": {
+                      "companyName": "Trenord",
+                      "corporateDesignation": "S.r.l.",
+                      "id": "0483",
+                      "logoId": 69
+                    },
+                    "selectionTravellerParameters": [],
+                    "issueTravellerParameters": [
+                      {
+                        "displayName": "NAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 10,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      },
+                      {
+                        "displayName": "SURNAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 11,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      }
+                    ],
+                    "selectionServiceParameters": [],
+                    "issueServiceParameters": [],
+                    "mandatoryInvoice": false,
+                    "multiselection": true,
+                    "attributes": [
+                      {
+                        "name": "BRAND",
+                        "values": [
+                          {
+                            "id": 28,
+                            "value": "REGIONALE",
+                            "displayName": "Regional",
+                            "displayOrder": 7
+                          }
+                        ],
+                        "status": "OFFERED"
+                      },
+                      {
+                        "name": "LEVEL",
+                        "values": [
+                          {
+                            "id": 27,
+                            "value": "2Â° Classe",
+                            "displayName": "2nd Class",
+                            "displayOrder": 6
+                          }
+                        ],
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "availableServiceId": 20,
+                    "status": "OFFERED"
+                  },
+                  "available": false,
+                  "offersNumber": 0
+                }
+              ],
+              "selectedOffers": [],
+              "ancillaries": [],
+              "pricetype": "D",
+              "travellersWithAncillaries": [],
+              "transitNodes": [
+                {
+                  "timezone": "Europe/Rome",
+                  "name": "Arona",
+                  "aliases": [],
+                  "locationId": 830001020,
+                  "visible": true,
+                  "geographicCoordinates": {
+                    "longitude": 8.559082,
+                    "latitude": 45.755399
+                  },
+                  "attributeValues": [],
+                  "bdo": true,
+                  "bdoCode": "S01020",
+                  "multistation": false,
+                  "zonaFrecce": false
+                }
+              ],
+              "commercialDistance": 0,
+              "classificationAcronymsSequence": ["RE"],
+              "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+              "offeredTransportMeanDeparture": {
+                "name": "2443",
+                "denomination": "",
+                "classification": {
+                  "type": "TRAIN",
+                  "classification": "Regionale",
+                  "acronym": "RE",
+                  "id": 5,
+                  "uicCode": 0,
+                  "uicAbbreviation": "REG"
+                },
+                "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "2443" },
+                "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+                "date": "2021-10-03T00:00:00.000+02:00",
+                "xmlId": "x488964f9-a6dd-3e63-925d-d0d5c7485c8c"
+              },
+              "seatMap": false,
+              "showSeatmapStatus": "NONE",
+              "seatmapMessages": [],
+              "transportInformations": [],
+              "transportMeanEvents": []
+            },
+            {
+              "type": "SOLUTION_SEGMENT",
+              "idXml": "x275bcf01-3a1f-4e1b-ad3a-0a50075a139a",
+              "startLocation": {
+                "timezone": "Europe/Rome",
+                "name": "Rho-Fiera Milano",
+                "aliases": [],
+                "locationId": 830001039,
+                "visible": true,
+                "geographicCoordinates": {
+                  "longitude": 9.088039,
+                  "latitude": 45.521264
+                },
+                "attributeValues": []
+              },
+              "endLocation": {
+                "timezone": "Europe/Rome",
+                "name": "Milano Porta Garibaldi",
+                "aliases": [
+                  {
+                    "name": "Milan Porta Garibaldi              \r",
+                    "lang": "EN"
+                  },
+                  {
+                    "name": "Mailand Porta Garibaldi            \r",
+                    "lang": "DE"
+                  },
+                  {
+                    "name": "Milan Porta Garibaldi              \r",
+                    "lang": "FR"
+                  },
+                  { "name": "MilÃ n Porta Garibaldi", "lang": "ES" }
+                ],
+                "locationId": 830001645,
+                "visible": true,
+                "geographicCoordinates": {
+                  "longitude": 9.187689,
+                  "latitude": 45.48492
+                },
+                "attributeValues": []
+              },
+              "departureTime": "2021-10-03T23:56:00.000+02:00",
+              "arrivalTime": "2021-10-04T00:11:00.000+02:00",
+              "physicalDistance": 0,
+              "subSegments": [],
+              "solutionServices": [
+                {
+                  "catalogService": {
+                    "id": 201,
+                    "type": "SEAT",
+                    "name": "RE 02 CLASSE",
+                    "displayName": "2Âª CLASSE",
+                    "descriptionShort": "",
+                    "descriptionStandard": "",
+                    "descriptionExtended": "",
+                    "saleCompany": {
+                      "companyName": "Trenitalia",
+                      "corporateDesignation": "S.p.A.",
+                      "id": "0083",
+                      "logoId": 68
+                    },
+                    "selectionTravellerParameters": [],
+                    "issueTravellerParameters": [
+                      {
+                        "displayName": "NAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 10,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      },
+                      {
+                        "displayName": "SURNAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 11,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      }
+                    ],
+                    "selectionServiceParameters": [],
+                    "issueServiceParameters": [],
+                    "mandatoryInvoice": false,
+                    "multiselection": true,
+                    "attributes": [
+                      {
+                        "name": "BRAND",
+                        "values": [
+                          {
+                            "id": 28,
+                            "value": "REGIONALE",
+                            "displayName": "Regional",
+                            "displayOrder": 7
+                          }
+                        ],
+                        "status": "OFFERED"
+                      },
+                      {
+                        "name": "LEVEL",
+                        "values": [
+                          {
+                            "id": 27,
+                            "value": "2Â° Classe",
+                            "displayName": "2nd Class",
+                            "displayOrder": 6
+                          }
+                        ],
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "availableServiceId": 20,
+                    "status": "OFFERED"
+                  },
+                  "available": false,
+                  "offersNumber": 0
+                },
+                {
+                  "catalogService": {
+                    "id": 30891,
+                    "type": "SEAT",
+                    "name": "02-CS-SMARTCARD-REG",
+                    "displayName": "2Âª CLASSE SM",
+                    "descriptionShort": "",
+                    "descriptionStandard": "",
+                    "descriptionExtended": "",
+                    "saleCompany": {
+                      "companyName": "Trenitalia",
+                      "corporateDesignation": "S.p.A.",
+                      "id": "0083",
+                      "logoId": 68
+                    },
+                    "selectionTravellerParameters": [],
+                    "issueTravellerParameters": [],
+                    "selectionServiceParameters": [],
+                    "issueServiceParameters": [
+                      {
+                        "displayName": "SMART_CARD_ISSUER",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": false,
+                          "typeDefinition": {
+                            "enumeration": ["TRENITALIA", "ALTRO"],
+                            "baseType": "STRING",
+                            "defaultValue": "TRENITALIA"
+                          },
+                          "hidden": true,
+                          "id": 155
+                        },
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "mandatoryInvoice": false,
+                    "multiselection": true,
+                    "attributes": [
+                      {
+                        "name": "BRAND",
+                        "values": [
+                          {
+                            "id": 28,
+                            "value": "REGIONALE",
+                            "displayName": "Regional",
+                            "displayOrder": 7
+                          }
+                        ],
+                        "status": "OFFERED"
+                      },
+                      {
+                        "name": "LEVEL",
+                        "values": [
+                          {
+                            "id": 27,
+                            "value": "2Â° Classe",
+                            "displayName": "2nd Class",
+                            "displayOrder": 6
+                          }
+                        ],
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "availableServiceId": 20,
+                    "status": "OFFERED"
+                  },
+                  "available": false,
+                  "offersNumber": 0
+                },
+                {
+                  "catalogService": {
+                    "id": 9000201,
+                    "type": "SEAT",
+                    "name": "TRN-RE 02 CLASSE",
+                    "displayName": "2Âª CLASSE",
+                    "descriptionShort": "",
+                    "descriptionStandard": "",
+                    "descriptionExtended": "",
+                    "saleCompany": {
+                      "companyName": "Trenord",
+                      "corporateDesignation": "S.r.l.",
+                      "id": "0483",
+                      "logoId": 69
+                    },
+                    "selectionTravellerParameters": [],
+                    "issueTravellerParameters": [
+                      {
+                        "displayName": "NAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 10,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      },
+                      {
+                        "displayName": "SURNAME",
+                        "readOnly": false,
+                        "validationMessages": [],
+                        "allowedValues": [],
+                        "type": {
+                          "validation": true,
+                          "typeDefinition": {
+                            "enumeration": [],
+                            "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                            "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                            "minLength": 1,
+                            "maxLength": 254,
+                            "baseType": "STRING"
+                          },
+                          "hidden": false,
+                          "id": 11,
+                          "identification": false,
+                          "personal": true,
+                          "marker": false
+                        }
+                      }
+                    ],
+                    "selectionServiceParameters": [],
+                    "issueServiceParameters": [],
+                    "mandatoryInvoice": false,
+                    "multiselection": true,
+                    "attributes": [
+                      {
+                        "name": "BRAND",
+                        "values": [
+                          {
+                            "id": 28,
+                            "value": "REGIONALE",
+                            "displayName": "Regional",
+                            "displayOrder": 7
+                          }
+                        ],
+                        "status": "OFFERED"
+                      },
+                      {
+                        "name": "LEVEL",
+                        "values": [
+                          {
+                            "id": 27,
+                            "value": "2Â° Classe",
+                            "displayName": "2nd Class",
+                            "displayOrder": 6
+                          }
+                        ],
+                        "status": "OFFERED"
+                      }
+                    ],
+                    "availableServiceId": 20,
+                    "status": "OFFERED"
+                  },
+                  "available": false,
+                  "offersNumber": 0
+                }
+              ],
+              "selectedOffers": [],
+              "ancillaries": [],
+              "pricetype": "D",
+              "travellersWithAncillaries": [],
+              "transitNodes": [],
+              "commercialDistance": 0,
+              "classificationAcronymsSequence": ["SU"],
+              "trainLogoInformations": [{ "acronym": "SU", "attributes": [] }],
+              "offeredTransportMeanDeparture": {
+                "name": "24685",
+                "denomination": "S6 TRENORD",
+                "classification": {
+                  "type": "TRAIN",
+                  "classification": "Suburbano",
+                  "acronym": "SU",
+                  "id": 31,
+                  "uicCode": 0,
+                  "uicAbbreviation": "SUB"
+                },
+                "id": { "transportOwnerId": "FS_ATAC8306", "routeId": "24685" },
+                "trainLogoInformation": { "acronym": "SU", "attributes": [] },
+                "date": "2021-10-03T00:00:00.000+02:00",
+                "xmlId": "xeeede96b-18f0-3ec6-b432-8b13556f7874"
+              },
+              "seatMap": false,
+              "showSeatmapStatus": "NONE",
+              "seatmapMessages": [],
+              "transportInformations": [],
+              "transportMeanEvents": []
+            }
+          ],
+          "solutionServices": [
+            {
+              "catalogService": {
+                "id": 201,
+                "type": "SEAT",
+                "name": "RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "catalogService": {
+                "id": 30891,
+                "type": "SEAT",
+                "name": "02-CS-SMARTCARD-REG",
+                "displayName": "2Âª CLASSE SM",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [
+                  {
+                    "displayName": "SMART_CARD_ISSUER",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": false,
+                      "typeDefinition": {
+                        "enumeration": ["TRENITALIA", "ALTRO"],
+                        "baseType": "STRING",
+                        "defaultValue": "TRENITALIA"
+                      },
+                      "hidden": true,
+                      "id": 155
+                    },
+                    "status": "OFFERED"
+                  }
+                ],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "catalogService": {
+                "id": 9000201,
+                "type": "SEAT",
+                "name": "TRN-RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenord",
+                  "corporateDesignation": "S.r.l.",
+                  "id": "0483",
+                  "logoId": 69
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            }
+          ],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "travellersWithAncillaries": [],
+          "transitNodes": [],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["RE", "SU"],
+          "trainLogoInformations": [
+            { "acronym": "RE", "attributes": [] },
+            { "acronym": "SU", "attributes": [] }
+          ]
+        },
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "xb71b88ec-b136-432c-868c-c83a7d3db8e0",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Porta Garibaldi",
+            "aliases": [
+              { "name": "Milan Porta Garibaldi              \r", "lang": "EN" },
+              { "name": "Mailand Porta Garibaldi            \r", "lang": "DE" },
+              { "name": "Milan Porta Garibaldi              \r", "lang": "FR" },
+              { "name": "MilÃ n Porta Garibaldi", "lang": "ES" }
+            ],
+            "locationId": 830001645,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.187689,
+              "latitude": 45.48492
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+              { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+              { "name": "Milan Main Station                 \r", "lang": "EN" },
+              { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-10-04T00:16:00.000+02:00",
+          "arrivalTime": "2021-10-04T00:31:00.000+02:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["UB"],
+          "trainLogoInformations": [{ "acronym": "UB", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "Urb",
+            "denomination": "UrbV",
+            "description": "Urban Means (not included in the price)",
+            "classification": {
+              "type": "UNCLASSIFIED",
+              "classification": "Urbano",
+              "acronym": "UB",
+              "id": 0,
+              "uicCode": 0
+            },
+            "trainLogoInformation": { "acronym": "UB", "attributes": [] },
+            "date": "2021-10-04T00:00:00.000+02:00"
+          },
+          "seatMap": false,
+          "showSeatmapStatus": "NONE",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        },
+        {
+          "type": "SOLUTION_SHOP",
+          "idXml": "x358a5db4-fe7e-407c-969b-fd4e8d5b4bc5",
+          "solutionServices": [
+            {
+              "providerId": 129,
+              "catalogService": {
+                "id": 31100,
+                "type": "SHOP",
+                "name": "HELBIZ-DPR-5",
+                "displayName": "Voucher Helbiz - 4â¬ invece di 5â¬",
+                "descriptionShort": "Voucher  5â¬",
+                "descriptionStandard": "Voucher  5â¬",
+                "descriptionExtended": "Voucher  5â¬",
+                "saleCompany": {
+                  "companyName": "HELBIZ ITALIA",
+                  "corporateDesignation": "s.r.l.",
+                  "id": "9990",
+                  "logoId": 762
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 366,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 129,
+              "catalogService": {
+                "id": 31101,
+                "type": "SHOP",
+                "name": "HELBIZ-DPR-10",
+                "displayName": "Voucher Helbiz - 8â¬ invece di 10â¬",
+                "descriptionShort": "Voucher  10â¬",
+                "descriptionStandard": "Voucher  10â¬",
+                "descriptionExtended": "Voucher  10â¬",
+                "saleCompany": {
+                  "companyName": "HELBIZ ITALIA",
+                  "corporateDesignation": "s.r.l.",
+                  "id": "9990",
+                  "logoId": 762
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 367,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 107,
+              "catalogService": {
+                "id": 10128,
+                "type": "SHOP",
+                "name": "MYTAXI-10",
+                "displayName": "Voucher FREE NOW - 9â¬ invece di 10â¬",
+                "descriptionShort": "Voucher da 10Â",
+                "descriptionStandard": "Voucher da 10Â",
+                "descriptionExtended": "Voucher da 10Â",
+                "saleCompany": {
+                  "companyName": "Mytaxi Italia",
+                  "corporateDesignation": "S.r.l.",
+                  "id": "9916",
+                  "logoId": 304
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 319,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 107,
+              "catalogService": {
+                "id": 10129,
+                "type": "SHOP",
+                "name": "MYTAXI-20",
+                "displayName": "Voucher FREE NOW - 18â¬ invece di 20â¬",
+                "descriptionShort": "Voucher da 20Â",
+                "descriptionStandard": "Voucher da 20Â",
+                "descriptionExtended": "Voucher da 20Â",
+                "saleCompany": {
+                  "companyName": "Mytaxi Italia",
+                  "corporateDesignation": "S.r.l.",
+                  "id": "9916",
+                  "logoId": 304
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 320,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 107,
+              "catalogService": {
+                "id": 10130,
+                "type": "SHOP",
+                "name": "MYTAXI-50",
+                "displayName": "Voucher FREE NOW - 45â¬ invece di 50â¬",
+                "descriptionShort": "Voucher da 50Â",
+                "descriptionStandard": "Voucher da 50Â",
+                "descriptionExtended": "Voucher da 50Â",
+                "saleCompany": {
+                  "companyName": "Mytaxi Italia",
+                  "corporateDesignation": "S.r.l.",
+                  "id": "9916",
+                  "logoId": 304
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 321,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            }
+          ],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "travellersWithAncillaries": []
+        }
+      ],
+      "travelSolutionMessages": [],
+      "saleable": true,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "soldOut": false,
+      "inhibited": true,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": {},
+      "trainLogoInformations": [
+        { "acronym": "RE", "attributes": [] },
+        { "acronym": "SU", "attributes": [] },
+        { "acronym": "UB", "attributes": [] }
+      ],
+      "additionalMessages": [],
+      "materialized": false
+    },
+    {
+      "date": "2021-10-03T00:00:00.000+02:00",
+      "id": { "travelSolutionId": 5 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "x05a4d058-3431-4060-a1a5-98599e3dcd8e",
+      "departurePlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "Milan Main Station                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+          { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+          { "name": "Milan Main Station                 \r", "lang": "EN" },
+          { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "departureTime": "2021-10-03T21:17:00.000+02:00",
+      "arrivalTime": "2021-10-03T22:40:00.000+02:00",
+      "totalDuration": 4980000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["EC"],
+      "classificationAcronymsSequence": ["EC"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "x81db77d6-b7b3-4bff-8530-d25e8227ba55",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+              { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+              { "name": "Milan Main Station                 \r", "lang": "EN" },
+              { "name": "MilÃ n EstaciÃ³n Central", "lang": "ES" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-10-03T21:17:00.000+02:00",
+          "arrivalTime": "2021-10-03T22:40:00.000+02:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["EC"],
+          "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "41",
+            "denomination": "",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "EuroCity",
+              "acronym": "EC",
+              "id": 13,
+              "uicCode": 50,
+              "uicAbbreviation": "EC"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "41" },
+            "trainLogoInformation": { "acronym": "EC", "attributes": [] },
+            "date": "2021-10-03T00:00:00.000+02:00",
+            "xmlId": "x2dace69d-0739-372b-9e46-6b0892f7b9c8"
+          },
+          "seatMap": true,
+          "showSeatmapStatus": "OPTIONAL",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        },
+        {
+          "type": "SOLUTION_SHOP",
+          "idXml": "x7a01e0e5-8754-4ce9-9dac-12356ffc011a",
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "travellersWithAncillaries": []
+        }
+      ],
+      "travelSolutionMessages": [],
+      "saleable": false,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "soldOut": false,
+      "inhibited": true,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": {},
+      "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+      "additionalMessages": [],
+      "materialized": false
+    }
+  ]
+}

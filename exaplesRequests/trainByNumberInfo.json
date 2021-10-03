@@ -1,0 +1,272 @@
+{
+  "dateOfferedTransportMeanDeparture": {
+    "name": "2436",
+    "denomination": "",
+    "classification": {
+      "type": "TRAIN",
+      "classification": "Regionale",
+      "acronym": "RE",
+      "id": 5,
+      "uicCode": 0,
+      "uicAbbreviation": "REG"
+    },
+    "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "2436" },
+    "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+    "date": "2021-10-02T18:25:00.000+02:00",
+    "xmlId": "x664c5291-f62e-3d1c-8de6-29908934f3d8"
+  },
+  "dateOfferedTransportMeanArrival": {
+    "name": "2436",
+    "denomination": "",
+    "classification": {
+      "type": "TRAIN",
+      "classification": "Regionale",
+      "acronym": "RE",
+      "id": 5,
+      "uicCode": 0,
+      "uicAbbreviation": "REG"
+    },
+    "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "2436" },
+    "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+    "date": "2021-10-02T18:25:00.000+02:00",
+    "xmlId": "x664c5291-f62e-3d1c-8de6-29908934f3d8"
+  },
+  "departureLocation": {
+    "timezone": "Europe/Rome",
+    "name": "Milano Centrale",
+    "aliases": [
+      { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+      { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+      { "name": "Milan Main Station                 \r", "lang": "EN" },
+      { "name": "Milàn Estación Central", "lang": "ES" }
+    ],
+    "locationId": 830001700,
+    "visible": true,
+    "geographicCoordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+    "attributeValues": [],
+    "bdo": true,
+    "bdoCode": "S01700",
+    "multistation": false,
+    "zonaFrecce": true
+  },
+  "arrivalLocation": {
+    "timezone": "Europe/Rome",
+    "name": "Domodossola",
+    "aliases": [],
+    "locationId": 830001003,
+    "visible": true,
+    "geographicCoordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+    "attributeValues": [],
+    "bdo": true,
+    "bdoCode": "S01003",
+    "multistation": false,
+    "zonaFrecce": false
+  },
+  "stops": [
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "Milan Gare Centrale                \r", "lang": "FR" },
+          { "name": "Mailand Hauptbahnhof               \r", "lang": "DE" },
+          { "name": "Milan Main Station                 \r", "lang": "EN" },
+          { "name": "Milàn Estación Central", "lang": "ES" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "departureTime": "2021-10-02T18:25:00.000+02:00",
+      "plannedPlatform": "2",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Rho-Fiera Milano",
+        "aliases": [],
+        "locationId": 830001039,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.088039,
+          "latitude": 45.521264
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01039",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "departureTime": "2021-10-02T18:36:00.000+02:00",
+      "arrivalTime": "2021-10-02T18:35:00.000+02:00",
+      "plannedPlatform": "3",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Busto Arsizio",
+        "aliases": [],
+        "locationId": 830001031,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.865034,
+          "latitude": 45.616165
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01031",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-10-02T18:54:00.000+02:00",
+      "arrivalTime": "2021-10-02T18:53:00.000+02:00",
+      "plannedPlatform": "4",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Gallarate",
+        "aliases": [],
+        "locationId": 830001030,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.798252,
+          "latitude": 45.659829
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01030",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-10-02T19:00:00.000+02:00",
+      "arrivalTime": "2021-10-02T18:59:00.000+02:00",
+      "plannedPlatform": "1",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Sesto Calende",
+        "aliases": [],
+        "locationId": 830001026,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.628138,
+          "latitude": 45.726241
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01026",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-10-02T19:12:00.000+02:00",
+      "arrivalTime": "2021-10-02T19:11:00.000+02:00",
+      "plannedPlatform": "1",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Arona",
+        "aliases": [],
+        "locationId": 830001020,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.559082,
+          "latitude": 45.755399
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01020",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-10-02T19:20:00.000+02:00",
+      "arrivalTime": "2021-10-02T19:19:00.000+02:00",
+      "plannedPlatform": "4",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Stresa",
+        "aliases": [],
+        "locationId": 830001016,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.531461,
+          "latitude": 45.884492
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01016",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-10-02T19:33:00.000+02:00",
+      "arrivalTime": "2021-10-02T19:32:00.000+02:00",
+      "plannedPlatform": "2",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Verbania-Pallanza",
+        "aliases": [],
+        "locationId": 830001013,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.472246,
+          "latitude": 45.943826
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01013",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-10-02T19:42:00.000+02:00",
+      "arrivalTime": "2021-10-02T19:41:00.000+02:00",
+      "plannedPlatform": "1",
+      "fastBuy": false
+    },
+    {
+      "location": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "arrivalTime": "2021-10-02T20:04:00.000+02:00",
+      "plannedPlatform": "4",
+      "fastBuy": false
+    }
+  ],
+  "delay": 0,
+  "updateLocationDenomination": "--",
+  "status": "NOT_LEFT",
+  "eligibleToNotification": true
+}
