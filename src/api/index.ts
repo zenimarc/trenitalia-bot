@@ -2,7 +2,8 @@ import {
   ResponseAutocompletionStation,
   ResponseTrainLine,
   ResponseTrainNumber,
-} from "types";
+} from "../types";
+import fetch from "cross-fetch";
 
 const API = "https://app.lefrecce.it/";
 const trainNumberEndpoint = "Channels.AppApi/rest/transports";
@@ -25,7 +26,10 @@ const headers = {
 const _getUrlByTrainNumber = async (trainNumber: string) => {
   const url = API + trainNumberEndpoint + "?transportName=" + trainNumber;
   const resp = await fetch(url, { headers });
-  const data = (await resp.json()) as ResponseTrainNumber[];
+  if (resp.status === 500) {
+    throw Error("il server API trenitalia non risponde correttamente");
+  }
+  const data: ResponseTrainNumber[] = await resp.json();
   return (
     API +
     trainNumberEndpoint2 +
@@ -33,15 +37,18 @@ const _getUrlByTrainNumber = async (trainNumber: string) => {
   );
 };
 
-export const getTrainInfo = async (trainNumber: string) => {
+export const getTrainInfo = async (
+  trainNumber: string
+): Promise<ResponseTrainLine> => {
   const url = await _getUrlByTrainNumber(trainNumber);
   const resp = await fetch(url, {
     headers,
   });
-  return await resp.json();
+  const respJson = await resp.json();
+  return respJson;
 };
 
-const getDelay = (data: ResponseTrainLine) => data.delay;
+export const getDelay = (data: ResponseTrainLine) => data.delay;
 
 export const getStationNameAutocompletion = async (partialName: string) => {
   const url =

@@ -8,29 +8,64 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  output   = "./generated/prisma-client-js"
 }
 
 model TrainNumber {
-  id                  Int       @id
+  id                  String           @id
   classification      String
-  departureLocation   Station   @relation("departing", fields: [departureLocationId], references: [id])
+  departureLocation   Station          @relation("departing", fields: [departureLocationId], references: [id])
   departureLocationId Int
-  arrivalLocation     Station   @relation("arriving", fields: [arrivalLocationId], references: [id])
+  arrivalLocation     Station          @relation("arriving", fields: [arrivalLocationId], references: [id])
   arrivalLocationId   Int
   journeys            Journey[]
+  usersTracking       UserTrackTrain[]
 }
 
 model Station {
-  id              Int           @id
-  arrivingTrains  TrainNumber[] @relation("arriving")
-  departingTrains TrainNumber[] @relation("departing")
+  id              Int              @id
+  name            String
+  arrivingTrains  TrainNumber[]    @relation("arriving")
+  departingTrains TrainNumber[]    @relation("departing")
+  journeys        JourneyStation[]
 }
 
 model Journey {
-  id            Int         @id @default(autoincrement())
-  trainNumber   TrainNumber @relation(fields: [trainNumberId], references: [id])
-  trainNumberId Int
+  id            Int              @id @default(autoincrement())
+  trainNumber   TrainNumber      @relation(fields: [trainNumberId], references: [id])
+  trainNumberId String
   date          DateTime
+  stations      JourneyStation[]
+  delay         Int
 
   @@unique([trainNumberId, date])
+}
+
+model JourneyStation {
+  journey         Journey   @relation(fields: [journeyId], references: [id])
+  journeyId       Int
+  station         Station   @relation(fields: [stationId], references: [id])
+  stationId       Int
+  departureDelay  Int?
+  arrivalDelay    Int?
+  plannedPlatform String
+  actualPlatform  String?
+  departureTime   DateTime?
+  arrivalTime     DateTime?
+
+  @@id([journeyId, stationId])
+}
+
+model UserTrackTrain {
+  user          User        @relation(fields: [userId], references: [id])
+  userId        String
+  trainNumber   TrainNumber @relation(fields: [trainNumberId], references: [id])
+  trainNumberId String
+
+  @@id([userId, trainNumberId])
+}
+
+model User {
+  id            String           @id @default(uuid())
+  trackedTrains UserTrackTrain[]
 }
