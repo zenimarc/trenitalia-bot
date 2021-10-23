@@ -71,6 +71,7 @@ var _getUrlByTrainNumber = function (trainNumber) { return __awaiter(void 0, voi
                 return [4 /*yield*/, resp.json()];
             case 2:
                 data = _a.sent();
+                //console.log("geturldata: ", data);
                 return [2 /*return*/, (API +
                         trainNumberEndpoint2 +
                         ("?transportMeanName=" + trainNumber + "&origin=" + data[0].startLocation.locationId))];
@@ -78,7 +79,7 @@ var _getUrlByTrainNumber = function (trainNumber) { return __awaiter(void 0, voi
     });
 }); };
 var getTrainInfo = function (trainNumber) { return __awaiter(void 0, void 0, void 0, function () {
-    var url, resp, respJson;
+    var url, resp, respText, respJson;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, _getUrlByTrainNumber(trainNumber)];
@@ -89,10 +90,23 @@ var getTrainInfo = function (trainNumber) { return __awaiter(void 0, void 0, voi
                     })];
             case 2:
                 resp = _a.sent();
-                return [4 /*yield*/, resp.json()];
+                return [4 /*yield*/, resp.text()];
             case 3:
-                respJson = _a.sent();
-                return [2 /*return*/, respJson];
+                respText = _a.sent();
+                try {
+                    respJson = JSON.parse(respText);
+                    //console.log("json di resp a url: ", respJson);
+                    return [2 /*return*/, respJson];
+                }
+                catch (e) {
+                    if (respText.includes("has been canceled")) {
+                        throw Error("canceled");
+                    }
+                    else {
+                        throw e;
+                    }
+                }
+                return [2 /*return*/];
         }
     });
 }); };

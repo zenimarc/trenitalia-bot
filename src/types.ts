@@ -45,3 +45,8 @@ export interface ResponseAutocompletionStation {
   locationId: number;
   [propName: string]: any;
 }
+
+export interface UserTrackings {
+  trainNumberId: string;
+  trainNumberClassification: string;
+}

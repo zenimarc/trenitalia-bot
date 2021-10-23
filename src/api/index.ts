@@ -30,6 +30,7 @@ const _getUrlByTrainNumber = async (trainNumber: string) => {
     throw Error("il server API trenitalia non risponde correttamente");
   }
   const data: ResponseTrainNumber[] = await resp.json();
+  //console.log("geturldata: ", data);
   return (
     API +
     trainNumberEndpoint2 +
@@ -41,11 +42,23 @@ export const getTrainInfo = async (
   trainNumber: string
 ): Promise<ResponseTrainLine> => {
   const url = await _getUrlByTrainNumber(trainNumber);
+  //console.log("url da richiamare: ", url);
   const resp = await fetch(url, {
     headers,
   });
-  const respJson = await resp.json();
-  return respJson;
+  //console.log("resp di url", await resp.text());
+  const respText = await resp.text();
+  try {
+    const respJson = JSON.parse(respText);
+    //console.log("json di resp a url: ", respJson);
+    return respJson;
+  } catch (e) {
+    if (respText.includes("has been canceled")) {
+      throw Error("canceled");
+    } else {
+      throw e;
+    }
+  }
 };
 
 export const getDelay = (data: ResponseTrainLine) => data.delay;

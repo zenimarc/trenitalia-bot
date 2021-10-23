@@ -35,56 +35,21 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 exports.__esModule = true;
+exports.startDeamon = void 0;
 var db_access_functions_1 = require("./db_access_functions");
-var express_1 = __importDefault(require("express"));
-var cors_1 = __importDefault(require("cors"));
-var helmet_1 = __importDefault(require("helmet"));
-var app = (0, express_1["default"])();
-app.use((0, helmet_1["default"])());
-app.use(express_1["default"].json());
-app.use((0, cors_1["default"])());
-var port = process.env.port || 8080;
-app.get("/", function (req, res) {
-    res.send("hello world");
-});
-app.get("/api/trainNumber/:id", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var id, _a, _b;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
-            case 0:
-                id = req.params.id;
-                _b = (_a = res).send;
-                return [4 /*yield*/, (0, db_access_functions_1.getJourneysTrainByNumber)(id)];
+var startDeamon = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var trackings, _i, trackings_1, tracking;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, (0, db_access_functions_1.getUserTracking)("admin")];
             case 1:
-                _b.apply(_a, [_c.sent()]);
+                trackings = _a.sent();
+                for (_i = 0, trackings_1 = trackings; _i < trackings_1.length; _i++) {
+                    tracking = trackings_1[_i];
+                }
                 return [2 /*return*/];
         }
     });
-}); });
-app.get("/api/user-tracking/:username", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var username, _a, _b;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
-            case 0:
-                username = req.params.username;
-                _b = (_a = res).send;
-                return [4 /*yield*/, (0, db_access_functions_1.getUserTracking)(username)];
-            case 1:
-                _b.apply(_a, [_c.sent()]);
-                return [2 /*return*/];
-        }
-    });
-}); });
-app.listen(port, function () {
-    console.log("server started at http://localhost:" + port);
-});
-//getStationNameAutocompletion("domo").then();
-//syncTrainByNumber("35").then(() => console.log("all ok"));
-//addUser("admin").then((data) => console.log(data));
-//addUserTracking("admin", "2419").then((data) => console.log(data));
-//getUserTracking("admin").then((data) => console.log(data));
-//getJourneysTrainByNumber("2419").then((data) => console.log(JSON.stringify(data)));
+}); };
+exports.startDeamon = startDeamon;

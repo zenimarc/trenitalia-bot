@@ -12,14 +12,16 @@ generator client {
 }
 
 model TrainNumber {
-  id                  String           @id
+  id                  String
   classification      String
-  departureLocation   Station          @relation("departing", fields: [departureLocationId], references: [id])
+  departureLocation   Station             @relation("departing", fields: [departureLocationId], references: [id])
   departureLocationId Int
-  arrivalLocation     Station          @relation("arriving", fields: [arrivalLocationId], references: [id])
+  arrivalLocation     Station             @relation("arriving", fields: [arrivalLocationId], references: [id])
   arrivalLocationId   Int
   journeys            Journey[]
-  usersTracking       UserTrackTrain[]
+  usersTracking       UserTrackTracking[]
+
+  @@id([id, classification])
 }
 
 model Station {
@@ -31,14 +33,15 @@ model Station {
 }
 
 model Journey {
-  id            Int              @id @default(autoincrement())
-  trainNumber   TrainNumber      @relation(fields: [trainNumberId], references: [id])
-  trainNumberId String
-  date          DateTime
-  stations      JourneyStation[]
-  delay         Int
+  id                        Int              @id @default(autoincrement())
+  trainNumber               TrainNumber      @relation(fields: [trainNumberId, trainNumberClassification], references: [id, classification])
+  trainNumberId             String
+  trainNumberClassification String
+  date                      DateTime
+  stations                  JourneyStation[]
+  delay                     Int
 
-  @@unique([trainNumberId, date])
+  @@unique([trainNumberId, date, trainNumberClassification])
 }
 
 model JourneyStation {
@@ -56,16 +59,18 @@ model JourneyStation {
   @@id([journeyId, stationId])
 }
 
-model UserTrackTrain {
-  user          User        @relation(fields: [userId], references: [id])
-  userId        String
-  trainNumber   TrainNumber @relation(fields: [trainNumberId], references: [id])
-  trainNumberId String
+model UserTrackTracking {
+  user                      User        @relation(fields: [userId], references: [id])
+  userId                    String
+  trainNumber               TrainNumber @relation(fields: [trainNumberId, trainNumberClassification], references: [id, classification])
+  trainNumberClassification String
+  trainNumberId             String
 
   @@id([userId, trainNumberId])
 }
 
 model User {
-  id            String           @id @default(uuid())
-  trackedTrains UserTrackTrain[]
+  id            String              @id @default(uuid())
+  username      String              @unique
+  trackedTrains UserTrackTracking[]
 }
