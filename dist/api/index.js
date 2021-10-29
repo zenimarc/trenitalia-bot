@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.getStationNameAutocompletion = exports.getDelay = exports.getTrainInfo = void 0;
+exports.getStationNameAutocompletion = exports.getDelay = exports.getTrainInfo = exports.getSolutionsByTrainNumber = void 0;
 var cross_fetch_1 = __importDefault(require("cross-fetch"));
 var API = "https://app.lefrecce.it/";
 var trainNumberEndpoint = "Channels.AppApi/rest/transports";
@@ -56,7 +56,7 @@ var headers = {
     "accept-encoding": "gzip, deflate",
     "user-agent": "okhttp/3.12.6"
 };
-var _getUrlByTrainNumber = function (trainNumber) { return __awaiter(void 0, void 0, void 0, function () {
+var getSolutionsByTrainNumber = function (trainNumber) { return __awaiter(void 0, void 0, void 0, function () {
     var url, resp, data;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -71,18 +71,36 @@ var _getUrlByTrainNumber = function (trainNumber) { return __awaiter(void 0, voi
                 return [4 /*yield*/, resp.json()];
             case 2:
                 data = _a.sent();
-                //console.log("geturldata: ", data);
+                return [2 /*return*/, data];
+        }
+    });
+}); };
+exports.getSolutionsByTrainNumber = getSolutionsByTrainNumber;
+var _getUrlByTrainNumber = function (trainNumber) { return __awaiter(void 0, void 0, void 0, function () {
+    var data;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, (0, exports.getSolutionsByTrainNumber)(trainNumber)];
+            case 1:
+                data = _a.sent();
                 return [2 /*return*/, (API +
                         trainNumberEndpoint2 +
                         ("?transportMeanName=" + trainNumber + "&origin=" + data[0].startLocation.locationId))];
         }
     });
 }); };
-var getTrainInfo = function (trainNumber) { return __awaiter(void 0, void 0, void 0, function () {
+var _getUrlByTrainNumberAndLocation = function (trainNumber, locationId) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, (API +
+                trainNumberEndpoint2 +
+                ("?transportMeanName=" + trainNumber + "&origin=" + locationId))];
+    });
+}); };
+var getTrainInfo = function (trainNumber, startLocation) { return __awaiter(void 0, void 0, void 0, function () {
     var url, resp, respText, respJson;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, _getUrlByTrainNumber(trainNumber)];
+            case 0: return [4 /*yield*/, _getUrlByTrainNumberAndLocation(trainNumber, startLocation)];
             case 1:
                 url = _a.sent();
                 return [4 /*yield*/, (0, cross_fetch_1["default"])(url, {
@@ -103,6 +121,8 @@ var getTrainInfo = function (trainNumber) { return __awaiter(void 0, void 0, voi
                         throw Error("canceled");
                     }
                     else {
+                        console.log("errore fetch di ", trainNumber);
+                        console.log(respText);
                         throw e;
                     }
                 }

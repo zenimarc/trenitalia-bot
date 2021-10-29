@@ -39,16 +39,32 @@ exports.__esModule = true;
 exports.startDeamon = void 0;
 var db_access_functions_1 = require("./db_access_functions");
 var startDeamon = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var trackings, _i, trackings_1, tracking;
+    var trackings, _i, trackings_1, tracking, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, (0, db_access_functions_1.getUserTracking)("admin")];
             case 1:
                 trackings = _a.sent();
-                for (_i = 0, trackings_1 = trackings; _i < trackings_1.length; _i++) {
-                    tracking = trackings_1[_i];
-                }
-                return [2 /*return*/];
+                _i = 0, trackings_1 = trackings;
+                _a.label = 2;
+            case 2:
+                if (!(_i < trackings_1.length)) return [3 /*break*/, 7];
+                tracking = trackings_1[_i];
+                _a.label = 3;
+            case 3:
+                _a.trys.push([3, 5, , 6]);
+                return [4 /*yield*/, (0, db_access_functions_1.syncTrainByNumber)(tracking.name, tracking.classification, tracking.departureLocationId)];
+            case 4:
+                _a.sent();
+                return [3 /*break*/, 6];
+            case 5:
+                e_1 = _a.sent();
+                console.log(e_1);
+                return [3 /*break*/, 6];
+            case 6:
+                _i++;
+                return [3 /*break*/, 2];
+            case 7: return [2 /*return*/];
         }
     });
 }); };

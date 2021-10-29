@@ -5,7 +5,12 @@ import {
   TrainStops,
   UserTrackings,
 } from "../types";
-import { getDelay, getStationNameAutocompletion, getTrainInfo } from "../api";
+import {
+  getDelay,
+  getSolutionsByTrainNumber,
+  getStationNameAutocompletion,
+  getTrainInfo,
+} from "../api";
 
 import { PrismaClient } from "../../prisma/generated/prisma-client-js/index.js";
 import { JourneyStation } from "../../prisma/generated/prisma-client-js/index.js";
@@ -39,24 +44,38 @@ export const addUserTracking = async (
   if (!user) {
     throw Error("User not found");
   }
+
+  const Train = await prisma.trainNumber.findUnique({
+    where: {
+      name_classification: {
+        name: trainNumber,
+        classification: classification,
+      },
+    },
+  });
+  if (!Train) {
+    throw Error("train not found");
+  }
+
   return await prisma.userTrackTracking.create({
     data: {
       userId: user.id,
-      trainNumberId: trainNumber,
-      trainNumberClassification: classification,
+      trainNumberId: Train.id,
     },
   });
 };
 
-export const getUserTracking = async (
-  username: string
-): Promise<UserTrackings[]> => {
+export const getUserTracking = async (username: string) => {
   const user = await prisma.user.findFirst({
     where: {
       username: username,
     },
     include: {
-      trackedTrains: true,
+      trackedTrains: {
+        include: {
+          trainNumber: true,
+        },
+      },
     },
   });
   if (!user) {
@@ -64,8 +83,9 @@ export const getUserTracking = async (
   }
   return user.trackedTrains.map((x) => {
     return {
-      trainNumberId: x.trainNumberId,
-      trainNumberClassification: x.trainNumberClassification,
+      name: x.trainNumber.name,
+      classification: x.trainNumber.classification,
+      departureLocationId: x.trainNumber.departureLocationId,
     };
   });
 };
@@ -82,22 +102,41 @@ export const getJourneysTrainByNumber = async (trainNumber: string) => {
   return train?.journeys;
 };
 
-export const syncTrainByNumber = async (trainNum: string) => {
+export const getTrainsByNumber = async (trainNum: string) => {
+  return getSolutionsByTrainNumber(trainNum);
+};
+
+export const syncTrainByNumber = async (
+  trainNum: string,
+  classification: string,
+  startLocation: number
+) => {
   try {
-    const respJson = await getTrainInfo(trainNum);
+    const respJson = await getTrainInfo(trainNum, startLocation);
     //console.log("\n\n resp json:", respJson);
 
-    const existJourney = await prisma.journey.findUnique({
+    const trainNumber = await prisma.trainNumber.findUnique({
       where: {
-        trainNumberId_date_trainNumberClassification: {
-          trainNumberId: respJson.dateOfferedTransportMeanDeparture.name,
-          date: respJson.dateOfferedTransportMeanDeparture.date,
-          trainNumberClassification:
-            respJson.dateOfferedTransportMeanDeparture.classification
-              .classification,
+        name_classification: {
+          name: respJson.dateOfferedTransportMeanDeparture.name,
+          classification:
+            respJson.dateOfferedTransportMeanDeparture.classification.classification.toLocaleLowerCase(),
         },
       },
     });
+
+    const trainId = trainNumber?.id;
+
+    const existJourney =
+      trainId &&
+      (await prisma.journey.findUnique({
+        where: {
+          trainNumberId_date: {
+            trainNumberId: trainId,
+            date: respJson.dateOfferedTransportMeanDeparture.date,
+          },
+        },
+      }));
     if (existJourney) {
       console.log("update del journey ", existJourney.date);
       await prisma.journey.update({
@@ -135,18 +174,16 @@ export const syncTrainByNumber = async (trainNum: string) => {
           trainNumber: {
             connectOrCreate: {
               where: {
-                id_classification: {
-                  id: respJson.dateOfferedTransportMeanDeparture.name,
+                name_classification: {
+                  name: respJson.dateOfferedTransportMeanDeparture.name,
                   classification:
-                    respJson.dateOfferedTransportMeanDeparture.classification
-                      .classification,
+                    respJson.dateOfferedTransportMeanDeparture.classification.classification.toLocaleLowerCase(),
                 },
               },
               create: {
-                id: respJson.dateOfferedTransportMeanDeparture.name,
+                name: respJson.dateOfferedTransportMeanDeparture.name,
                 classification:
-                  respJson.dateOfferedTransportMeanDeparture.classification
-                    .classification,
+                  respJson.dateOfferedTransportMeanDeparture.classification.classification.toLocaleLowerCase(),
                 arrivalLocation: {
                   connectOrCreate: {
                     where: {
@@ -161,11 +198,11 @@ export const syncTrainByNumber = async (trainNum: string) => {
                 departureLocation: {
                   connectOrCreate: {
                     where: {
-                      id: respJson.arrivalLocation.locationId,
+                      id: respJson.departureLocation.locationId,
                     },
                     create: {
-                      id: respJson.arrivalLocation.locationId,
-                      name: respJson.arrivalLocation.name,
+                      id: respJson.departureLocation.locationId,
+                      name: respJson.departureLocation.name,
                     },
                   },
                 },

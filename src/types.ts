@@ -1,6 +1,9 @@
 export interface ResponseTrainNumber {
   startTime: string;
+  transportMeanName: string; //sarebbe il numero
+  transportDenomination: string; //sarebbe la classification "eurocity..."
   startLocation: { name: string; locationId: number };
+  endLocation: { name: string; locationId: number };
   [propName: string]: any;
 }
 
@@ -48,5 +51,4 @@ export interface ResponseAutocompletionStation {
 
 export interface UserTrackings {
   trainNumberId: string;
-  trainNumberClassification: string;
 }

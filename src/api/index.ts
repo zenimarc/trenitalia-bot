@@ -23,14 +23,20 @@ const headers = {
   "user-agent": "okhttp/3.12.6",
 };
 
-const _getUrlByTrainNumber = async (trainNumber: string) => {
+export const getSolutionsByTrainNumber = async (
+  trainNumber: string
+): Promise<ResponseTrainNumber[]> => {
   const url = API + trainNumberEndpoint + "?transportName=" + trainNumber;
   const resp = await fetch(url, { headers });
   if (resp.status === 500) {
     throw Error("il server API trenitalia non risponde correttamente");
   }
-  const data: ResponseTrainNumber[] = await resp.json();
-  //console.log("geturldata: ", data);
+  const data = await resp.json();
+  return data;
+};
+
+const _getUrlByTrainNumber = async (trainNumber: string) => {
+  const data = await getSolutionsByTrainNumber(trainNumber);
   return (
     API +
     trainNumberEndpoint2 +
@@ -38,10 +44,22 @@ const _getUrlByTrainNumber = async (trainNumber: string) => {
   );
 };
 
+const _getUrlByTrainNumberAndLocation = async (
+  trainNumber: string,
+  locationId: number
+) => {
+  return (
+    API +
+    trainNumberEndpoint2 +
+    `?transportMeanName=${trainNumber}&origin=${locationId}`
+  );
+};
+
 export const getTrainInfo = async (
-  trainNumber: string
+  trainNumber: string,
+  startLocation: number
 ): Promise<ResponseTrainLine> => {
-  const url = await _getUrlByTrainNumber(trainNumber);
+  const url = await _getUrlByTrainNumberAndLocation(trainNumber, startLocation);
   //console.log("url da richiamare: ", url);
   const resp = await fetch(url, {
     headers,
@@ -56,6 +74,8 @@ export const getTrainInfo = async (
     if (respText.includes("has been canceled")) {
       throw Error("canceled");
     } else {
+      console.log("errore fetch di ", trainNumber);
+      console.log(respText);
       throw e;
     }
   }

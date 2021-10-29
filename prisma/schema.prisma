@@ -12,7 +12,8 @@ generator client {
 }
 
 model TrainNumber {
-  id                  String
+  id                  String              @id @default(uuid())
+  name                String
   classification      String
   departureLocation   Station             @relation("departing", fields: [departureLocationId], references: [id])
   departureLocationId Int
@@ -21,7 +22,7 @@ model TrainNumber {
   journeys            Journey[]
   usersTracking       UserTrackTracking[]
 
-  @@id([id, classification])
+  @@unique([name, classification])
 }
 
 model Station {
@@ -33,15 +34,14 @@ model Station {
 }
 
 model Journey {
-  id                        Int              @id @default(autoincrement())
-  trainNumber               TrainNumber      @relation(fields: [trainNumberId, trainNumberClassification], references: [id, classification])
-  trainNumberId             String
-  trainNumberClassification String
-  date                      DateTime
-  stations                  JourneyStation[]
-  delay                     Int
+  id            Int              @id @default(autoincrement())
+  trainNumber   TrainNumber      @relation(fields: [trainNumberId], references: [id])
+  trainNumberId String
+  date          DateTime
+  stations      JourneyStation[]
+  delay         Int
 
-  @@unique([trainNumberId, date, trainNumberClassification])
+  @@unique([trainNumberId, date])
 }
 
 model JourneyStation {
@@ -60,11 +60,10 @@ model JourneyStation {
 }
 
 model UserTrackTracking {
-  user                      User        @relation(fields: [userId], references: [id])
-  userId                    String
-  trainNumber               TrainNumber @relation(fields: [trainNumberId, trainNumberClassification], references: [id, classification])
-  trainNumberClassification String
-  trainNumberId             String
+  user          User        @relation(fields: [userId], references: [id])
+  userId        String
+  trainNumber   TrainNumber @relation(fields: [trainNumberId], references: [id])
+  trainNumberId String
 
   @@id([userId, trainNumberId])
 }
