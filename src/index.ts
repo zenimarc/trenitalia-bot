@@ -15,7 +15,6 @@ import helmet from "helmet";
 
 var cron = require("node-cron");
 
-/*
 const app = express();
 app.use(helmet());
 app.use(express.json());
@@ -41,7 +40,6 @@ app.get("/api/user-tracking/:username", async (req, res) => {
 app.listen(port, () => {
   console.log(`server started at http://localhost:${port}`);
 });
-*/
 
 //getStationNameAutocompletion("domo").then();
 
@@ -112,7 +110,7 @@ main();
 //addUserTracking("admin", "2419", "Regionale").then((data) => console.log(data));
 //getUserTracking("admin").then((data) => console.log(data));
 
-//getJourneysTrainByNumber("2419").then((data) => console.log(JSON.stringify(data)));
+//getJourneysTrainByNumber("2419").then((data) =>console.log(JSON.stringify(data)));
 
 //getTrainsByNumber("35");
 
@@ -122,4 +120,4 @@ main();
 });
 */
 
-startDeamon();
+//startDeamon();

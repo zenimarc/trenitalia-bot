@@ -93,13 +93,13 @@ export const getUserTracking = async (username: string) => {
 export const getJourneysTrainByNumber = async (trainNumber: string) => {
   const train = await prisma.trainNumber.findFirst({
     where: {
-      id: trainNumber,
+      name: trainNumber,
     },
     include: {
       journeys: { include: { stations: true } },
     },
   });
-  return train?.journeys;
+  return train;
 };
 
 export const getTrainsByNumber = async (trainNum: string) => {
@@ -240,8 +240,31 @@ export const syncTrainByNumber = async (
     const err = e as Error;
     console.log(e);
     if (err.message === "canceled") {
-      // treno cancellato ho solo i dati di getTrainInfo in .text()
+      // treno cancellato ho solo resp getTrainInfo in .text()
       console.log("treno", trainNum, "cancellato");
+      addCanceledTrain(trainNum, startLocation, classification);
     }
   }
+};
+
+const addCanceledTrain = (
+  trainNum: string,
+  startLocationId: number,
+  classification: string
+) => {
+  prisma.journey.create({
+    data: {
+      trainNumber: {
+        connect: {
+          name_classification: {
+            classification: classification,
+            name: trainNum,
+          },
+        },
+      },
+      date: new Date(),
+      delay: 0,
+      isCanceled: true,
+    },
+  });
 };

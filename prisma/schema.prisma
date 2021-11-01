@@ -40,6 +40,7 @@ model Journey {
   date          DateTime
   stations      JourneyStation[]
   delay         Int
+  isCanceled    Boolean          @default(false)
 
   @@unique([trainNumberId, date])
 }

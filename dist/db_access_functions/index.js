@@ -138,7 +138,7 @@ var getJourneysTrainByNumber = function (trainNumber) { return __awaiter(void 0,
         switch (_a.label) {
             case 0: return [4 /*yield*/, prisma.trainNumber.findFirst({
                     where: {
-                        id: trainNumber
+                        name: trainNumber
                     },
                     include: {
                         journeys: { include: { stations: true } }
@@ -146,7 +146,7 @@ var getJourneysTrainByNumber = function (trainNumber) { return __awaiter(void 0,
                 })];
             case 1:
                 train = _a.sent();
-                return [2 /*return*/, train === null || train === void 0 ? void 0 : train.journeys];
+                return [2 /*return*/, train];
         }
     });
 }); };
