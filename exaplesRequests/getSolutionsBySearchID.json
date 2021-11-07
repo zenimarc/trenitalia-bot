@@ -1,0 +1,3824 @@
+{
+  "query": "GET /Channels.AppApi/rest/search/aa18a8a53da14134c5f31806ec57d07a/solutions?offset=0&onlyFrecce=false&onlyRegional=false&orderby=0",
+  "example_response": [
+    {
+      "date": "2021-11-06T00:00:00.000+01:00",
+      "id": { "travelSolutionId": 1 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "xe4ee3d17-750d-47c3-9e5c-75c9a11943af",
+      "departurePlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "MILAN MAIN STATION                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+          { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+          { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+          { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-11-06T17:25:00.000+01:00",
+      "arrivalTime": "2021-11-06T19:04:00.000+01:00",
+      "totalDuration": 5940000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["RE"],
+      "classificationAcronymsSequence": ["RE"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "x523656ab-2703-4eb9-8b71-7dfe0e7d6e4a",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+              { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+              { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+              { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-11-06T17:25:00.000+01:00",
+          "arrivalTime": "2021-11-06T19:04:00.000+01:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["RE"],
+          "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "2434",
+            "denomination": "Regionale TRENORD",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "Regionale",
+              "acronym": "RE",
+              "id": 5,
+              "uicCode": 0,
+              "uicAbbreviation": "REG"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8306", "routeId": "2434" },
+            "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+            "date": "2021-11-06T00:00:00.000+01:00",
+            "xmlId": "x7c2c105c-27cc-3cb8-a4ed-b7d9ac499094"
+          },
+          "seatMap": false,
+          "showSeatmapStatus": "NONE",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        },
+        {
+          "type": "SOLUTION_SHOP",
+          "idXml": "xdcb12d5d-72cd-444f-a9b3-9b27d64b7a56",
+          "solutionServices": [],
+          "selectedOffers": [],
+          "ancillaries": [],
+          "travellersWithAncillaries": []
+        }
+      ],
+      "totalPrice": "0.00",
+      "travelSolutionMessages": [
+        {
+          "description": "It's not possible to buy a travel solution if the departure date is before current date.",
+          "type": "INFO"
+        },
+        {
+          "description": "Regional tickets can't be purchased in the last 5 minutes before departure",
+          "type": "INFO"
+        }
+      ],
+      "saleable": false,
+      "saleabilityMessages": [
+        "It's not possible to buy a travel solution if the departure date is before current date.",
+        "Regional tickets can't be purchased in the last 5 minutes before departure"
+      ],
+      "showGrid": false,
+      "soldOut": false,
+      "inhibited": true,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": { "amount": "0.00", "currency": "EUR" },
+      "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+      "additionalMessages": []
+    },
+    {
+      "date": "2021-11-06T00:00:00.000+01:00",
+      "id": { "travelSolutionId": 2 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "xd94aa0fe-51ef-411b-9aa2-1c0da6f88bf7",
+      "departurePlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "MILAN MAIN STATION                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+          { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+          { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+          { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-11-06T18:20:00.000+01:00",
+      "arrivalTime": "2021-11-06T19:43:00.000+01:00",
+      "totalDuration": 4980000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["EC"],
+      "classificationAcronymsSequence": ["EC"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "xa1918f22-0b28-41da-ad45-4c3b5ced4097",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+              { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+              { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+              { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-11-06T18:20:00.000+01:00",
+          "arrivalTime": "2021-11-06T19:43:00.000+01:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [
+            {
+              "catalogService": {
+                "id": 298,
+                "type": "ADDITIONAL_SERVICE",
+                "name": "ANIMALE-PRENOTABILE",
+                "displayName": "Trasporto Animale",
+                "descriptionShort": "Medium or large-sized dogs transport service",
+                "descriptionStandard": "Medium or large-sized dogs transport service",
+                "descriptionExtended": "Medium or large-sized dogs transport service",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 223,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60002,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-01-CLASSE-PRIMA",
+                "displayName": "1Âª CLASSE",
+                "descriptionShort": "1Âª CLASSE",
+                "descriptionStandard": "1Âª CLASSE",
+                "descriptionExtended": "1Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 23,
+                        "value": "1Â° Business",
+                        "displayName": "1st Business",
+                        "displayOrder": 2
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 30,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 3
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60005,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-02-CLASSE-SECONDA",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "2Âª CLASSE",
+                "descriptionStandard": "2Âª CLASSE",
+                "descriptionExtended": "2Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 33,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 3
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60006,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-02-CLASSE-FAMIGLIA",
+                "displayName": "2Âª CLASSE FAMIGLIA",
+                "descriptionShort": "2Âª CLASSE FAMIGLIA",
+                "descriptionStandard": "2Âª CLASSE FAMIGLIA",
+                "descriptionExtended": "2Âª CLASSE FAMIGLIA",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 34,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60107,
+                "type": "SEAT",
+                "name": "1 PRENOT. CIS-ITA-GIRUNO-01-CLASSE-PRIMA",
+                "displayName": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "descriptionShort": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "descriptionStandard": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "descriptionExtended": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 23,
+                        "value": "1Â° Business",
+                        "displayName": "1st Business",
+                        "displayOrder": 2
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 30,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60108,
+                "type": "SEAT",
+                "name": "2 PRENOT. CIS-ITA-GIRUNO-02-CLASSE-SECONDA",
+                "displayName": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "descriptionShort": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "descriptionStandard": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "descriptionExtended": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 33,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60122,
+                "type": "SEAT",
+                "name": "2 PRENOT. CIS-ITA-GIRUNO-02-CLASSE-FAMIGLIA",
+                "displayName": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "descriptionShort": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "descriptionStandard": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "descriptionExtended": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 34,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "catalogService": {
+                "id": 299,
+                "type": "ADDITIONAL_SERVICE",
+                "name": "SERVIZIO-SCELTA-POSTO",
+                "displayName": "SCELTA POSTO",
+                "descriptionShort": "Paid seat selection",
+                "descriptionStandard": "Paid seat selection",
+                "descriptionExtended": "Paid seat selection",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 282,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            }
+          ],
+          "price": "24.00",
+          "selectedOffers": [
+            {
+              "xmlId": "x6b5ab74f-565f-457e-9314-0fa78e716e5f",
+              "status": "SELECTED",
+              "price": "24.00",
+              "availableAmount": 31,
+              "catalogService": {
+                "id": 60005,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-02-CLASSE-SECONDA",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "2Âª CLASSE",
+                "descriptionStandard": "2Âª CLASSE",
+                "descriptionExtended": "2Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 33,
+                "status": "OFFERED"
+              },
+              "providerId": 1,
+              "solutionNodeRef": {
+                "type": "SOLUTION_SEGMENT",
+                "idXml": "xa1918f22-0b28-41da-ad45-4c3b5ced4097",
+                "solutionServices": [],
+                "selectedOffers": [],
+                "ancillaries": [],
+                "travellersWithAncillaries": []
+              },
+              "startValidity": "2021-11-06T17:25:00.000+01:00",
+              "endValidity": "2021-11-09T18:20:00.000+01:00",
+              "bookingInfo": {
+                "traveller": {
+                  "xmlId": "x33a59b87-e9fc-46fb-b2ac-233753309c66",
+                  "parameters": [
+                    {
+                      "displayName": "TRAVELLER TYPE",
+                      "readOnly": false,
+                      "value": "ADULTO",
+                      "valid": true,
+                      "validationMessages": [],
+                      "allowedValues": [],
+                      "type": {
+                        "validation": false,
+                        "typeDefinition": {
+                          "enumeration": [
+                            "ADULTO",
+                            "RAGAZZO",
+                            "ANZIANO",
+                            "ANIMALE"
+                          ],
+                          "baseType": "STRING"
+                        },
+                        "hidden": true,
+                        "id": 15,
+                        "identification": false,
+                        "personal": false,
+                        "marker": false
+                      }
+                    }
+                  ],
+                  "serviceParameters": []
+                },
+                "price": "24.00",
+                "amount": { "amount": "24.00", "currency": "EUR" },
+                "reportItem": { "eligibilityLevel": "ELIGIBLE" },
+                "providerOptions": []
+              },
+              "parameters": [
+                {
+                  "displayName": "",
+                  "readOnly": false,
+                  "value": "ADULTO",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": false,
+                    "id": 80
+                  },
+                  "status": "OFFERED"
+                },
+                {
+                  "displayName": "Green Pass",
+                  "readOnly": false,
+                  "value": "Y",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": true,
+                    "id": 296
+                  },
+                  "status": "OFFERED"
+                }
+              ],
+              "onboardCheck": false,
+              "offerEntity": {
+                "id": 1,
+                "name": "BASE",
+                "displayName": "BASE",
+                "descriptionShort": "Unlimited reservation change allowed, for free, before departure. Partial refund allowed.",
+                "descriptionStandard": "Unlimited booking change allowed before departure for free only in case of a Base ticket's price equal to or less than the one purchased. Partial refund allowed.",
+                "descriptionExtended": " ",
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "promotion": false,
+                "roundTrip": false,
+                "offerFamily": "BASE",
+                "attributes": [
+                  { "name": "CHECK_CAMBIO", "values": ["SI"] },
+                  { "name": "CHECK_RIMBORSO", "values": ["SI"] },
+                  { "name": "CHECK_PROGRAMMA_CF", "values": ["SI"] },
+                  { "name": "CHECK_MODIFICABILE", "values": ["SI"] },
+                  { "name": "B2B_OFFER_TYPE", "values": ["MAIN"] }
+                ],
+                "priority": 20
+              },
+              "inhibithedMessage": [],
+              "pip": false,
+              "messages": [],
+              "validationEvents": [],
+              "amount": { "amount": "24.00", "currency": "EUR" },
+              "isEditable": true,
+              "showPrice": true,
+              "offeredServiceAttributes": [],
+              "isSmartcardCreatable": false
+            }
+          ],
+          "amount": { "amount": "24.00", "currency": "EUR" },
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["EC"],
+          "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "56",
+            "denomination": "EuroCity",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "EuroCity",
+              "acronym": "EC",
+              "id": 13,
+              "uicCode": 50,
+              "uicAbbreviation": "EC"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "56" },
+            "trainLogoInformation": { "acronym": "EC", "attributes": [] },
+            "date": "2021-11-06T00:00:00.000+01:00",
+            "xmlId": "x4fbb6e38-87b0-3cc1-9c3c-413c1662b4db"
+          },
+          "seatMap": true,
+          "showSeatmapStatus": "OPTIONAL",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        }
+      ],
+      "totalPrice": "24.00",
+      "travelSolutionMessages": [],
+      "saleable": true,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "travellersNumber": 1,
+      "soldOut": false,
+      "inhibited": false,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": { "amount": "24.00", "currency": "EUR" },
+      "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+      "additionalMessages": []
+    },
+    {
+      "date": "2021-11-06T00:00:00.000+01:00",
+      "id": { "travelSolutionId": 3 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "x2f3bc4ea-0217-4b45-9d48-035eb9771c22",
+      "departurePlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "MILAN MAIN STATION                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+          { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+          { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+          { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-11-06T18:25:00.000+01:00",
+      "arrivalTime": "2021-11-06T20:04:00.000+01:00",
+      "totalDuration": 5940000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["RE"],
+      "classificationAcronymsSequence": ["RE"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "xac32de5d-a6f7-4acc-a678-776c9af4676b",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+              { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+              { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+              { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-11-06T18:25:00.000+01:00",
+          "arrivalTime": "2021-11-06T20:04:00.000+01:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [
+            {
+              "catalogService": {
+                "id": 201,
+                "type": "SEAT",
+                "name": "RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 1
+            },
+            {
+              "catalogService": {
+                "id": 30891,
+                "type": "SEAT",
+                "name": "02-CS-SMARTCARD-REG",
+                "displayName": "2Âª CLASSE SM",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [
+                  {
+                    "displayName": "SMART_CARD_ISSUER",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": false,
+                      "typeDefinition": {
+                        "enumeration": ["TRENITALIA", "ALTRO"],
+                        "baseType": "STRING",
+                        "defaultValue": "TRENITALIA"
+                      },
+                      "hidden": true,
+                      "id": 155
+                    },
+                    "status": "OFFERED"
+                  }
+                ],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 1
+            },
+            {
+              "catalogService": {
+                "id": 9000201,
+                "type": "SEAT",
+                "name": "TRN-RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenord",
+                  "corporateDesignation": "S.r.l.",
+                  "id": "0483",
+                  "logoId": 69
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            }
+          ],
+          "price": "10.80",
+          "selectedOffers": [
+            {
+              "xmlId": "xa4f0ba36-35d4-419a-b8ad-cc630cad3314",
+              "status": "SELECTED",
+              "price": "10.80",
+              "availableAmount": 32767,
+              "catalogService": {
+                "id": 201,
+                "type": "SEAT",
+                "name": "RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "solutionNodeRef": {
+                "type": "SOLUTION_SEGMENT",
+                "idXml": "xac32de5d-a6f7-4acc-a678-776c9af4676b",
+                "solutionServices": [],
+                "selectedOffers": [],
+                "ancillaries": [],
+                "travellersWithAncillaries": []
+              },
+              "startValidity": "2021-11-06T00:00:00.000+01:00",
+              "endValidity": "2021-11-06T23:59:00.000+01:00",
+              "bookingInfo": {
+                "traveller": {
+                  "xmlId": "x33a59b87-e9fc-46fb-b2ac-233753309c66",
+                  "parameters": [
+                    {
+                      "displayName": "TRAVELLER TYPE",
+                      "readOnly": false,
+                      "value": "ADULTO",
+                      "valid": true,
+                      "validationMessages": [],
+                      "allowedValues": [],
+                      "type": {
+                        "validation": false,
+                        "typeDefinition": {
+                          "enumeration": [
+                            "ADULTO",
+                            "RAGAZZO",
+                            "ANZIANO",
+                            "ANIMALE"
+                          ],
+                          "baseType": "STRING"
+                        },
+                        "hidden": true,
+                        "id": 15,
+                        "identification": false,
+                        "personal": false,
+                        "marker": false
+                      }
+                    }
+                  ],
+                  "serviceParameters": []
+                },
+                "price": "10.80",
+                "amount": { "amount": "10.80", "currency": "EUR" },
+                "reportItem": { "eligibilityLevel": "ELIGIBLE" },
+                "providerOptions": []
+              },
+              "parameters": [
+                {
+                  "displayName": "",
+                  "readOnly": false,
+                  "value": "ADULTO",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": false,
+                    "id": 80
+                  },
+                  "status": "OFFERED"
+                },
+                {
+                  "displayName": "",
+                  "readOnly": false,
+                  "value": "'T39_10_1_2CL_AD','T39_13_1_2CL_AD'",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": true,
+                    "id": 166
+                  },
+                  "status": "OFFERED"
+                }
+              ],
+              "onboardCheck": false,
+              "offerEntity": {
+                "id": 69,
+                "name": "ORDINARIA",
+                "displayName": "ORDINARIA",
+                "descriptionShort": "The purchased ticket is already validated with the date and time of departure chosen by the customer. Tickets may have different validity according to regional regulations. Change and refund are permitted according to different regional regulations.",
+                "descriptionStandard": "The purchased ticket is already validated with the date and time of departure chosen by the customer. Tickets may have different validity according to regional regulations. Change and refund are permitted according to different regional regulations.",
+                "descriptionExtended": "The purchased ticket is already validated with the date and time of departure chosen by the customer. Tickets may have different validity according to regional regulations. Change and refund are permitted according to different regional regulations.",
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "promotion": false,
+                "roundTrip": false,
+                "offerFamily": "ORDINARIA",
+                "attributes": [],
+                "priority": 20
+              },
+              "inhibithedMessage": [],
+              "pip": false,
+              "messages": [],
+              "validationEvents": [],
+              "amount": { "amount": "10.80", "currency": "EUR" },
+              "isEditable": true,
+              "showPrice": true,
+              "offeredServiceAttributes": [],
+              "isSmartcardCreatable": false
+            }
+          ],
+          "amount": { "amount": "10.80", "currency": "EUR" },
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["RE"],
+          "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "2436",
+            "denomination": "Regionale",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "Regionale",
+              "acronym": "RE",
+              "id": 5,
+              "uicCode": 0,
+              "uicAbbreviation": "REG"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "2436" },
+            "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+            "date": "2021-11-06T00:00:00.000+01:00",
+            "xmlId": "x664c5291-f62e-3d1c-8de6-29908934f3d8"
+          },
+          "seatMap": false,
+          "showSeatmapStatus": "NONE",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        }
+      ],
+      "totalPrice": "10.80",
+      "travelSolutionMessages": [],
+      "saleable": true,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "travellersNumber": 1,
+      "soldOut": false,
+      "inhibited": false,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": { "amount": "10.80", "currency": "EUR" },
+      "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+      "additionalMessages": []
+    },
+    {
+      "date": "2021-11-06T00:00:00.000+01:00",
+      "id": { "travelSolutionId": 4 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "xddc67df6-676b-45b5-aaec-e7a79c68530d",
+      "departurePlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "MILAN MAIN STATION                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+          { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+          { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+          { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-11-06T19:20:00.000+01:00",
+      "arrivalTime": "2021-11-06T20:43:00.000+01:00",
+      "totalDuration": 4980000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["EC"],
+      "classificationAcronymsSequence": ["EC"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "x26f86907-1543-4c3f-acbd-6741a7bf8217",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+              { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+              { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+              { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-11-06T19:20:00.000+01:00",
+          "arrivalTime": "2021-11-06T20:43:00.000+01:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [
+            {
+              "catalogService": {
+                "id": 298,
+                "type": "ADDITIONAL_SERVICE",
+                "name": "ANIMALE-PRENOTABILE",
+                "displayName": "Trasporto Animale",
+                "descriptionShort": "Medium or large-sized dogs transport service",
+                "descriptionStandard": "Medium or large-sized dogs transport service",
+                "descriptionExtended": "Medium or large-sized dogs transport service",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 223,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60002,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-01-CLASSE-PRIMA",
+                "displayName": "1Âª CLASSE",
+                "descriptionShort": "1Âª CLASSE",
+                "descriptionStandard": "1Âª CLASSE",
+                "descriptionExtended": "1Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 23,
+                        "value": "1Â° Business",
+                        "displayName": "1st Business",
+                        "displayOrder": 2
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 30,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 3
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60005,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-02-CLASSE-SECONDA",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "2Âª CLASSE",
+                "descriptionStandard": "2Âª CLASSE",
+                "descriptionExtended": "2Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 33,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 3
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60006,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-02-CLASSE-FAMIGLIA",
+                "displayName": "2Âª CLASSE FAMIGLIA",
+                "descriptionShort": "2Âª CLASSE FAMIGLIA",
+                "descriptionStandard": "2Âª CLASSE FAMIGLIA",
+                "descriptionExtended": "2Âª CLASSE FAMIGLIA",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 34,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 3
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60107,
+                "type": "SEAT",
+                "name": "1 PRENOT. CIS-ITA-GIRUNO-01-CLASSE-PRIMA",
+                "displayName": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "descriptionShort": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "descriptionStandard": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "descriptionExtended": "PRENOTAZIONE CARNET 1Âª CLASSE ",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 23,
+                        "value": "1Â° Business",
+                        "displayName": "1st Business",
+                        "displayOrder": 2
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 30,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60108,
+                "type": "SEAT",
+                "name": "2 PRENOT. CIS-ITA-GIRUNO-02-CLASSE-SECONDA",
+                "displayName": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "descriptionShort": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "descriptionStandard": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "descriptionExtended": "PRENOTAZIONE CARNET 2Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 33,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "providerId": 1,
+              "catalogService": {
+                "id": 60122,
+                "type": "SEAT",
+                "name": "2 PRENOT. CIS-ITA-GIRUNO-02-CLASSE-FAMIGLIA",
+                "displayName": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "descriptionShort": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "descriptionStandard": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "descriptionExtended": "PRENOTAZIONE CARNET 2Âª CLASSE FAMIGLIA",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 34,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            },
+            {
+              "catalogService": {
+                "id": 299,
+                "type": "ADDITIONAL_SERVICE",
+                "name": "SERVIZIO-SCELTA-POSTO",
+                "displayName": "SCELTA POSTO",
+                "descriptionShort": "Paid seat selection",
+                "descriptionStandard": "Paid seat selection",
+                "descriptionExtended": "Paid seat selection",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [],
+                "availableServiceId": 282,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            }
+          ],
+          "price": "24.00",
+          "selectedOffers": [
+            {
+              "xmlId": "xaa3d2895-4297-4c70-888f-31d202f507f7",
+              "status": "SELECTED",
+              "price": "24.00",
+              "availableAmount": 93,
+              "catalogService": {
+                "id": 60005,
+                "type": "SEAT",
+                "name": "CIS-ITA-GIRUNO-02-CLASSE-SECONDA",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "2Âª CLASSE",
+                "descriptionStandard": "2Âª CLASSE",
+                "descriptionExtended": "2Âª CLASSE",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 0,
+                        "value": "FRECCIAROSSA",
+                        "displayName": "Frecciarossa",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "TRAIN_CLASSIFICATION",
+                    "values": [
+                      {
+                        "id": 7,
+                        "value": "AV",
+                        "displayName": "AV",
+                        "displayOrder": 1
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 25,
+                        "value": "2Â° Standard",
+                        "displayName": "2nd Standard",
+                        "displayOrder": 6
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 33,
+                "status": "OFFERED"
+              },
+              "providerId": 1,
+              "solutionNodeRef": {
+                "type": "SOLUTION_SEGMENT",
+                "idXml": "x26f86907-1543-4c3f-acbd-6741a7bf8217",
+                "solutionServices": [],
+                "selectedOffers": [],
+                "ancillaries": [],
+                "travellersWithAncillaries": []
+              },
+              "startValidity": "2021-11-06T17:25:00.000+01:00",
+              "endValidity": "2021-11-09T19:20:00.000+01:00",
+              "bookingInfo": {
+                "traveller": {
+                  "xmlId": "x33a59b87-e9fc-46fb-b2ac-233753309c66",
+                  "parameters": [
+                    {
+                      "displayName": "TRAVELLER TYPE",
+                      "readOnly": false,
+                      "value": "ADULTO",
+                      "valid": true,
+                      "validationMessages": [],
+                      "allowedValues": [],
+                      "type": {
+                        "validation": false,
+                        "typeDefinition": {
+                          "enumeration": [
+                            "ADULTO",
+                            "RAGAZZO",
+                            "ANZIANO",
+                            "ANIMALE"
+                          ],
+                          "baseType": "STRING"
+                        },
+                        "hidden": true,
+                        "id": 15,
+                        "identification": false,
+                        "personal": false,
+                        "marker": false
+                      }
+                    }
+                  ],
+                  "serviceParameters": []
+                },
+                "price": "24.00",
+                "amount": { "amount": "24.00", "currency": "EUR" },
+                "reportItem": { "eligibilityLevel": "ELIGIBLE" },
+                "providerOptions": []
+              },
+              "parameters": [
+                {
+                  "displayName": "",
+                  "readOnly": false,
+                  "value": "ADULTO",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": false,
+                    "id": 80
+                  },
+                  "status": "OFFERED"
+                },
+                {
+                  "displayName": "Green Pass",
+                  "readOnly": false,
+                  "value": "Y",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": true,
+                    "id": 296
+                  },
+                  "status": "OFFERED"
+                }
+              ],
+              "onboardCheck": false,
+              "offerEntity": {
+                "id": 1,
+                "name": "BASE",
+                "displayName": "BASE",
+                "descriptionShort": "Unlimited reservation change allowed, for free, before departure. Partial refund allowed.",
+                "descriptionStandard": "Unlimited booking change allowed before departure for free only in case of a Base ticket's price equal to or less than the one purchased. Partial refund allowed.",
+                "descriptionExtended": " ",
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "promotion": false,
+                "roundTrip": false,
+                "offerFamily": "BASE",
+                "attributes": [
+                  { "name": "CHECK_CAMBIO", "values": ["SI"] },
+                  { "name": "CHECK_RIMBORSO", "values": ["SI"] },
+                  { "name": "CHECK_PROGRAMMA_CF", "values": ["SI"] },
+                  { "name": "CHECK_MODIFICABILE", "values": ["SI"] },
+                  { "name": "B2B_OFFER_TYPE", "values": ["MAIN"] }
+                ],
+                "priority": 20
+              },
+              "inhibithedMessage": [],
+              "pip": false,
+              "messages": [],
+              "validationEvents": [],
+              "amount": { "amount": "24.00", "currency": "EUR" },
+              "isEditable": true,
+              "showPrice": true,
+              "offeredServiceAttributes": [],
+              "isSmartcardCreatable": false
+            }
+          ],
+          "amount": { "amount": "24.00", "currency": "EUR" },
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["EC"],
+          "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "42",
+            "denomination": "EuroCity",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "EuroCity",
+              "acronym": "EC",
+              "id": 13,
+              "uicCode": 50,
+              "uicAbbreviation": "EC"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "42" },
+            "trainLogoInformation": { "acronym": "EC", "attributes": [] },
+            "date": "2021-11-06T00:00:00.000+01:00",
+            "xmlId": "xebdb4ccc-820a-388b-878b-ea35d4ee75e7"
+          },
+          "seatMap": true,
+          "showSeatmapStatus": "OPTIONAL",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        }
+      ],
+      "totalPrice": "24.00",
+      "travelSolutionMessages": [],
+      "saleable": true,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "travellersNumber": 1,
+      "soldOut": false,
+      "inhibited": false,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": { "amount": "24.00", "currency": "EUR" },
+      "trainLogoInformations": [{ "acronym": "EC", "attributes": [] }],
+      "additionalMessages": []
+    },
+    {
+      "date": "2021-11-06T00:00:00.000+01:00",
+      "id": { "travelSolutionId": 5 },
+      "state": "NEW",
+      "mainTransportTypes": ["TRAIN"],
+      "tagValues": [],
+      "xmlId": "xb22f78d3-7322-41da-8b87-b5ecb529b6c1",
+      "departurePlace": {
+        "label": "Milano Centrale",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700,
+        "alias": "MILAN MAIN STATION                 \r",
+        "timezone": "Europe/Rome"
+      },
+      "arrivalPlace": {
+        "label": "Domodossola",
+        "tags": ["NetworkNode"],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003,
+        "timezone": "Europe/Rome"
+      },
+      "departureLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Milano Centrale",
+        "aliases": [
+          { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+          { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+          { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+          { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+        ],
+        "locationId": 830001700,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 9.204544,
+          "latitude": 45.486341
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01700",
+        "multistation": false,
+        "zonaFrecce": true
+      },
+      "arrivalLocation": {
+        "timezone": "Europe/Rome",
+        "name": "Domodossola",
+        "aliases": [],
+        "locationId": 830001003,
+        "visible": true,
+        "geographicCoordinates": {
+          "longitude": 8.296686,
+          "latitude": 46.115431
+        },
+        "attributeValues": [],
+        "bdo": true,
+        "bdoCode": "S01003",
+        "multistation": false,
+        "zonaFrecce": false
+      },
+      "departureTime": "2021-11-06T19:25:00.000+01:00",
+      "arrivalTime": "2021-11-06T21:04:00.000+01:00",
+      "totalDuration": 5940000,
+      "transportTypes": ["TRAIN"],
+      "classificationAcronyms": ["RE"],
+      "classificationAcronymsSequence": ["RE"],
+      "solutionNodes": [
+        {
+          "type": "SOLUTION_SEGMENT",
+          "idXml": "x579331b0-7a06-4bd9-ab18-116e8b9611c1",
+          "startLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Milano Centrale",
+            "aliases": [
+              { "name": "MILAN MAIN STATION                 \r", "lang": "EN" },
+              { "name": "MAILAND HAUPTBAHNHOF               \r", "lang": "DE" },
+              { "name": "MILAN ESTACION CENTRAL             \r", "lang": "ES" },
+              { "name": "MILAN GARE CENTRALE                \r", "lang": "FR" }
+            ],
+            "locationId": 830001700,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 9.204544,
+              "latitude": 45.486341
+            },
+            "attributeValues": []
+          },
+          "endLocation": {
+            "timezone": "Europe/Rome",
+            "name": "Domodossola",
+            "aliases": [],
+            "locationId": 830001003,
+            "visible": true,
+            "geographicCoordinates": {
+              "longitude": 8.296686,
+              "latitude": 46.115431
+            },
+            "attributeValues": []
+          },
+          "departureTime": "2021-11-06T19:25:00.000+01:00",
+          "arrivalTime": "2021-11-06T21:04:00.000+01:00",
+          "physicalDistance": 0,
+          "subSegments": [],
+          "solutionServices": [
+            {
+              "catalogService": {
+                "id": 201,
+                "type": "SEAT",
+                "name": "RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 1
+            },
+            {
+              "catalogService": {
+                "id": 30891,
+                "type": "SEAT",
+                "name": "02-CS-SMARTCARD-REG",
+                "displayName": "2Âª CLASSE SM",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [
+                  {
+                    "displayName": "SMART_CARD_ISSUER",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": false,
+                      "typeDefinition": {
+                        "enumeration": ["TRENITALIA", "ALTRO"],
+                        "baseType": "STRING",
+                        "defaultValue": "TRENITALIA"
+                      },
+                      "hidden": true,
+                      "id": 155
+                    },
+                    "status": "OFFERED"
+                  }
+                ],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": true,
+              "offersNumber": 1
+            },
+            {
+              "catalogService": {
+                "id": 9000201,
+                "type": "SEAT",
+                "name": "TRN-RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenord",
+                  "corporateDesignation": "S.r.l.",
+                  "id": "0483",
+                  "logoId": 69
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "available": false,
+              "offersNumber": 0
+            }
+          ],
+          "price": "10.80",
+          "selectedOffers": [
+            {
+              "xmlId": "x2adcf8b0-23b3-4594-ad3e-002603a6488d",
+              "status": "SELECTED",
+              "price": "10.80",
+              "availableAmount": 32767,
+              "catalogService": {
+                "id": 201,
+                "type": "SEAT",
+                "name": "RE 02 CLASSE",
+                "displayName": "2Âª CLASSE",
+                "descriptionShort": "",
+                "descriptionStandard": "",
+                "descriptionExtended": "",
+                "saleCompany": {
+                  "companyName": "Trenitalia",
+                  "corporateDesignation": "S.p.A.",
+                  "id": "0083",
+                  "logoId": 68
+                },
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [
+                  {
+                    "displayName": "NAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 10,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  },
+                  {
+                    "displayName": "SURNAME",
+                    "readOnly": false,
+                    "validationMessages": [],
+                    "allowedValues": [],
+                    "type": {
+                      "validation": true,
+                      "typeDefinition": {
+                        "enumeration": [],
+                        "validationPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z0-9 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ_-]{1,}",
+                        "inputPattern": "[\\u0370-\\u03ff\\u1f00-\\u1fffA-Za-z 'Ã Ã©Ã¨Ã¬Ã²Ã¹Ã¤Ã«Ã¯Ã¶Ã¼Ã§ÃÃÃÃÃÃÃÃÃÃ-]",
+                        "minLength": 1,
+                        "maxLength": 254,
+                        "baseType": "STRING"
+                      },
+                      "hidden": false,
+                      "id": 11,
+                      "identification": false,
+                      "personal": true,
+                      "marker": false
+                    }
+                  }
+                ],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "mandatoryInvoice": false,
+                "multiselection": true,
+                "attributes": [
+                  {
+                    "name": "BRAND",
+                    "values": [
+                      {
+                        "id": 28,
+                        "value": "REGIONALE",
+                        "displayName": "Regional",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  },
+                  {
+                    "name": "LEVEL",
+                    "values": [
+                      {
+                        "id": 27,
+                        "value": "2Â° Classe",
+                        "displayName": "2nd Class",
+                        "displayOrder": 7
+                      }
+                    ],
+                    "status": "OFFERED"
+                  }
+                ],
+                "availableServiceId": 20,
+                "status": "OFFERED"
+              },
+              "solutionNodeRef": {
+                "type": "SOLUTION_SEGMENT",
+                "idXml": "x579331b0-7a06-4bd9-ab18-116e8b9611c1",
+                "solutionServices": [],
+                "selectedOffers": [],
+                "ancillaries": [],
+                "travellersWithAncillaries": []
+              },
+              "startValidity": "2021-11-06T00:00:00.000+01:00",
+              "endValidity": "2021-11-06T23:59:00.000+01:00",
+              "bookingInfo": {
+                "traveller": {
+                  "xmlId": "x33a59b87-e9fc-46fb-b2ac-233753309c66",
+                  "parameters": [
+                    {
+                      "displayName": "TRAVELLER TYPE",
+                      "readOnly": false,
+                      "value": "ADULTO",
+                      "valid": true,
+                      "validationMessages": [],
+                      "allowedValues": [],
+                      "type": {
+                        "validation": false,
+                        "typeDefinition": {
+                          "enumeration": [
+                            "ADULTO",
+                            "RAGAZZO",
+                            "ANZIANO",
+                            "ANIMALE"
+                          ],
+                          "baseType": "STRING"
+                        },
+                        "hidden": true,
+                        "id": 15,
+                        "identification": false,
+                        "personal": false,
+                        "marker": false
+                      }
+                    }
+                  ],
+                  "serviceParameters": []
+                },
+                "price": "10.80",
+                "amount": { "amount": "10.80", "currency": "EUR" },
+                "reportItem": { "eligibilityLevel": "ELIGIBLE" },
+                "providerOptions": []
+              },
+              "parameters": [
+                {
+                  "displayName": "",
+                  "readOnly": false,
+                  "value": "ADULTO",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": false,
+                    "id": 80
+                  },
+                  "status": "OFFERED"
+                },
+                {
+                  "displayName": "",
+                  "readOnly": false,
+                  "value": "'T39_10_1_2CL_AD','T39_13_1_2CL_AD'",
+                  "valid": true,
+                  "validationMessages": [],
+                  "allowedValues": [],
+                  "type": {
+                    "validation": false,
+                    "typeDefinition": {
+                      "enumeration": [],
+                      "baseType": "STRING"
+                    },
+                    "hidden": true,
+                    "id": 166
+                  },
+                  "status": "OFFERED"
+                }
+              ],
+              "onboardCheck": false,
+              "offerEntity": {
+                "id": 69,
+                "name": "ORDINARIA",
+                "displayName": "ORDINARIA",
+                "descriptionShort": "The purchased ticket is already validated with the date and time of departure chosen by the customer. Tickets may have different validity according to regional regulations. Change and refund are permitted according to different regional regulations.",
+                "descriptionStandard": "The purchased ticket is already validated with the date and time of departure chosen by the customer. Tickets may have different validity according to regional regulations. Change and refund are permitted according to different regional regulations.",
+                "descriptionExtended": "The purchased ticket is already validated with the date and time of departure chosen by the customer. Tickets may have different validity according to regional regulations. Change and refund are permitted according to different regional regulations.",
+                "selectionTravellerParameters": [],
+                "issueTravellerParameters": [],
+                "selectionServiceParameters": [],
+                "issueServiceParameters": [],
+                "promotion": false,
+                "roundTrip": false,
+                "offerFamily": "ORDINARIA",
+                "attributes": [],
+                "priority": 20
+              },
+              "inhibithedMessage": [],
+              "pip": false,
+              "messages": [],
+              "validationEvents": [],
+              "amount": { "amount": "10.80", "currency": "EUR" },
+              "isEditable": true,
+              "showPrice": true,
+              "offeredServiceAttributes": [],
+              "isSmartcardCreatable": false
+            }
+          ],
+          "amount": { "amount": "10.80", "currency": "EUR" },
+          "ancillaries": [],
+          "pricetype": "D",
+          "travellersWithAncillaries": [],
+          "transitNodes": [
+            {
+              "timezone": "Europe/Rome",
+              "name": "Busto Arsizio",
+              "aliases": [],
+              "locationId": 830001031,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.865034,
+                "latitude": 45.616165
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01031",
+              "multistation": false,
+              "zonaFrecce": false
+            },
+            {
+              "timezone": "Europe/Rome",
+              "name": "Arona",
+              "aliases": [],
+              "locationId": 830001020,
+              "visible": true,
+              "geographicCoordinates": {
+                "longitude": 8.559082,
+                "latitude": 45.755399
+              },
+              "attributeValues": [],
+              "bdo": true,
+              "bdoCode": "S01020",
+              "multistation": false,
+              "zonaFrecce": false
+            }
+          ],
+          "commercialDistance": 0,
+          "classificationAcronymsSequence": ["RE"],
+          "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+          "offeredTransportMeanDeparture": {
+            "name": "2438",
+            "denomination": "Regionale",
+            "classification": {
+              "type": "TRAIN",
+              "classification": "Regionale",
+              "acronym": "RE",
+              "id": 5,
+              "uicCode": 0,
+              "uicAbbreviation": "REG"
+            },
+            "id": { "transportOwnerId": "FS_ATAC8300", "routeId": "2438" },
+            "trainLogoInformation": { "acronym": "RE", "attributes": [] },
+            "date": "2021-11-06T00:00:00.000+01:00",
+            "xmlId": "x318d0f07-1726-394c-9f93-0ea9743d815c"
+          },
+          "seatMap": false,
+          "showSeatmapStatus": "NONE",
+          "seatmapMessages": [],
+          "transportInformations": [],
+          "transportMeanEvents": []
+        }
+      ],
+      "totalPrice": "10.80",
+      "travelSolutionMessages": [],
+      "saleable": true,
+      "saleabilityMessages": [],
+      "showGrid": true,
+      "travellersNumber": 1,
+      "soldOut": false,
+      "inhibited": false,
+      "inhibitedMessages": [],
+      "typeDescriptionsKey": [],
+      "saveable": false,
+      "saved": false,
+      "availabilities": [],
+      "totalAmount": { "amount": "10.80", "currency": "EUR" },
+      "trainLogoInformations": [{ "acronym": "RE", "attributes": [] }],
+      "additionalMessages": []
+    }
+  ]
+}

@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.syncTrainByNumber = exports.getTrainsByNumber = exports.getJourneysTrainByNumber = exports.getUserTracking = exports.addUserTracking = exports.addUser = void 0;
+exports.addCanceledTrain = exports.syncTrainByNumber = exports.getTrainsByNumber = exports.getJourneysTrainByNumber = exports.getUserTracking = exports.addUserTracking = exports.addUser = void 0;
 var api_1 = require("../api");
 var index_js_1 = require("../../prisma/generated/prisma-client-js/index.js");
 var exceptions_1 = require("../utils/exceptions");
@@ -307,8 +307,9 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
                 err = e_2;
                 console.log(e_2);
                 if (err.message === "canceled") {
-                    // treno cancellato ho solo i dati di getTrainInfo in .text()
+                    // treno cancellato ho solo resp getTrainInfo in .text()
                     console.log("treno", trainNum, "cancellato");
+                    (0, exports.addCanceledTrain)(trainNum, startLocation, classification);
                 }
                 return [3 /*break*/, 14];
             case 14: return [2 /*return*/];
@@ -316,3 +317,26 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
     });
 }); };
 exports.syncTrainByNumber = syncTrainByNumber;
+var addCanceledTrain = function (trainNum, startLocationId, classification) { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, prisma.journey.create({
+                    data: {
+                        trainNumber: {
+                            connect: {
+                                name_classification: {
+                                    classification: classification.toLocaleLowerCase(),
+                                    name: trainNum
+                                }
+                            }
+                        },
+                        date: new Date().toISOString(),
+                        delay: 0,
+                        isCanceled: true
+                    }
+                })];
+            case 1: return [2 /*return*/, _a.sent()];
+        }
+    });
+}); };
+exports.addCanceledTrain = addCanceledTrain;

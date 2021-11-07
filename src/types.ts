@@ -25,16 +25,17 @@ export interface TrainStops {
   [propName: string]: any;
 }
 
-export interface ResponseTrainLine {
-  dateOfferedTransportMeanDeparture: {
-    name: string;
-    date: string;
-    classification: {
-      type: string;
-      classification: string;
-      [propName: string]: any;
-    };
+interface OfferedTransportMeanDeparture {
+  name: string;
+  date: string;
+  classification: {
+    type: string;
+    classification: string;
+    [propName: string]: any;
   };
+}
+export interface ResponseTrainLine {
+  dateOfferedTransportMeanDeparture: OfferedTransportMeanDeparture;
   departureLocation: { name: string; locationId: number };
   arrivalLocation: { name: string; locationId: number };
   stops: TrainStops[];
@@ -47,6 +48,27 @@ export interface ResponseAutocompletionStation {
   name: string;
   locationId: number;
   [propName: string]: any;
+}
+
+export interface RespToStartEndLocationSearch {
+  searchId: string;
+  totalSolutions: number;
+  [propName: string]: any;
+}
+
+export interface RespObjectToSolutionsBySearchID {
+  date: string;
+  id: { travelSolutionId: number };
+  departureLocation: TrainLocation;
+  arrivalLocation: TrainLocation;
+  departureTime: string;
+  arrivalTime: string;
+  solutionNodes: [
+    {
+      offeredTransportMeanDeparture: OfferedTransportMeanDeparture;
+      startLocation: TrainLocation;
+    }
+  ];
 }
 
 export interface UserTrackings {

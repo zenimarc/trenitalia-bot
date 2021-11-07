@@ -1,0 +1,33 @@
+{
+  "query": "/Channels.AppApi/rest/search?startlocationid=830001700&endlocationid=830001003&arflag=A&departure_time=2021-11-06T16%3A24%3A02.821Z&adultno=1&childno=0&direction=A&frecce=false&regional=false&maxchanges=-1&return_departure_time=2021-11-06T17%3A24%3A02.821Z",
+  "example_response": {
+    "searchId": "e7488c17baed14dc120189db571785ce",
+    "totalSolutions": 19,
+    "expirationDate": "2021-11-06T18:07:56.055+01:00",
+    "searchCriteria": {
+      "adults": 1,
+      "children": 0,
+      "departurePlace": {
+        "tags": [],
+        "coordinates": { "longitude": 9.204544, "latitude": 45.486341 },
+        "locationId": 830001700
+      },
+      "arrivalPlace": {
+        "tags": [],
+        "coordinates": { "longitude": 8.296686, "latitude": 46.115431 },
+        "locationId": 830001003
+      },
+      "departureTimesStart": "2021-11-06T17:24:02.821+01:00",
+      "travellers": [],
+      "searchType": "STANDARD",
+      "roundTrip": false,
+      "direction": "ONE_WAY",
+      "maxNumberOfChanges": -1,
+      "speedTrainsFilterEnabled": false,
+      "regionalTrainsFilterEnabled": false,
+      "userProfileOptions": [],
+      "postSaleDetails": []
+    },
+    "timezone": "Europe/Rome"
+  }
+}

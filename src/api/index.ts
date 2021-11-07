@@ -1,4 +1,5 @@
 import {
+  RespObjectToSolutionsBySearchID,
   ResponseAutocompletionStation,
   ResponseTrainLine,
   ResponseTrainNumber,
@@ -83,7 +84,9 @@ export const getTrainInfo = async (
 
 export const getDelay = (data: ResponseTrainLine) => data.delay;
 
-export const getStationNameAutocompletion = async (partialName: string) => {
+export const getStationNameAutocompletion = async (
+  partialName: string
+): Promise<ResponseAutocompletionStation[]> => {
   const url =
     API +
     stationAutocompletionEndpoint +
@@ -93,4 +96,53 @@ export const getStationNameAutocompletion = async (partialName: string) => {
   Array.from(data).forEach((el) =>
     console.log("station: " + el.name + " have id: " + el.locationId)
   );
+  return data;
+};
+
+export const getSearchIDByDepartureAndArrivalStations = async (
+  departureStationID: number,
+  arrivalStationID: number,
+  departureTime = new Date().toISOString(),
+  frecce: boolean = false,
+  regional: boolean = false,
+  maxchanges: number = -1,
+  adultNo: number = 1
+) => {
+  const resp = await fetch(
+    `${API}/Channels.AppApi/rest/search?startlocationid=${departureStationID}&endlocationid=${arrivalStationID}&arflag=A&departure_time=${encodeURIComponent(
+      departureTime
+    )}&adultno=${adultNo}&childno=0&direction=A&frecce=${frecce}&regional=${regional}&maxchanges=${maxchanges}&return_departure_time=${encodeURIComponent(
+      departureTime
+    )}`,
+    { headers }
+  );
+  //console.log(resp);
+  const respJson = await resp.json();
+  return respJson;
+};
+
+// in questo momento non prende tutte le soluzioni, bisogna guardare a che sol id siamo arrivati
+// e confrontare con totalSol, quindi usare parametro offset per otteneree altre sol.
+export const getSolutionsBySearchID = async (
+  searchID: string,
+  totalSol: number,
+  offset = 0
+): Promise<RespObjectToSolutionsBySearchID[]> => {
+  const resp = await fetch(
+    API +
+      "/Channels.AppApi/rest/search/" +
+      searchID +
+      "/solutions?offset=" +
+      offset +
+      "&onlyFrecce=false&onlyRegional=false&orderby=0",
+    { headers }
+  );
+  const respText = await resp.text();
+  try {
+    const respJson = JSON.parse(respText);
+    return respJson;
+  } catch (e) {
+    console.log(respText);
+    throw e;
+  }
 };

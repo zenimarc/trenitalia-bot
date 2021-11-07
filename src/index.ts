@@ -5,6 +5,7 @@ import {
   getUserTracking,
   getJourneysTrainByNumber,
   getTrainsByNumber,
+  addCanceledTrain,
 } from "./db_access_functions";
 
 import { startDeamon } from "./deamon";

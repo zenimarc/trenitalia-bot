@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.getStationNameAutocompletion = exports.getDelay = exports.getTrainInfo = exports.getSolutionsByTrainNumber = void 0;
+exports.getSolutionsBySearchID = exports.getSearchIDByDepartureAndArrivalStations = exports.getStationNameAutocompletion = exports.getDelay = exports.getTrainInfo = exports.getSolutionsByTrainNumber = void 0;
 var cross_fetch_1 = __importDefault(require("cross-fetch"));
 var API = "https://app.lefrecce.it/";
 var trainNumberEndpoint = "Channels.AppApi/rest/transports";
@@ -150,8 +150,61 @@ var getStationNameAutocompletion = function (partialName) { return __awaiter(voi
                 Array.from(data).forEach(function (el) {
                     return console.log("station: " + el.name + " have id: " + el.locationId);
                 });
-                return [2 /*return*/];
+                return [2 /*return*/, data];
         }
     });
 }); };
 exports.getStationNameAutocompletion = getStationNameAutocompletion;
+var getSearchIDByDepartureAndArrivalStations = function (departureStationID, arrivalStationID, departureTime, frecce, regional, maxchanges, adultNo) {
+    if (departureTime === void 0) { departureTime = new Date().toISOString(); }
+    if (frecce === void 0) { frecce = false; }
+    if (regional === void 0) { regional = false; }
+    if (maxchanges === void 0) { maxchanges = -1; }
+    if (adultNo === void 0) { adultNo = 1; }
+    return __awaiter(void 0, void 0, void 0, function () {
+        var resp, respJson;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, cross_fetch_1["default"])(API + "/Channels.AppApi/rest/search?startlocationid=" + departureStationID + "&endlocationid=" + arrivalStationID + "&arflag=A&departure_time=" + encodeURIComponent(departureTime) + "&adultno=" + adultNo + "&childno=0&direction=A&frecce=" + frecce + "&regional=" + regional + "&maxchanges=" + maxchanges + "&return_departure_time=" + encodeURIComponent(departureTime), { headers: headers })];
+                case 1:
+                    resp = _a.sent();
+                    return [4 /*yield*/, resp.json()];
+                case 2:
+                    respJson = _a.sent();
+                    return [2 /*return*/, respJson];
+            }
+        });
+    });
+};
+exports.getSearchIDByDepartureAndArrivalStations = getSearchIDByDepartureAndArrivalStations;
+var getSolutionsBySearchID = function (searchID, offset) {
+    if (offset === void 0) { offset = 0; }
+    return __awaiter(void 0, void 0, void 0, function () {
+        var resp, respText, respJson;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, cross_fetch_1["default"])(API +
+                        "/Channels.AppApi/rest/search/" +
+                        searchID +
+                        "/solutions?offset=" +
+                        offset +
+                        "&onlyFrecce=false&onlyRegional=false&orderby=0", { headers: headers })];
+                case 1:
+                    resp = _a.sent();
+                    return [4 /*yield*/, resp.text()];
+                case 2:
+                    respText = _a.sent();
+                    try {
+                        respJson = JSON.parse(respText);
+                        return [2 /*return*/, respJson];
+                    }
+                    catch (e) {
+                        console.log(respText);
+                        throw e;
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+};
+exports.getSolutionsBySearchID = getSolutionsBySearchID;

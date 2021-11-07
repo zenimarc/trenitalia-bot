@@ -247,22 +247,22 @@ export const syncTrainByNumber = async (
   }
 };
 
-const addCanceledTrain = (
+export const addCanceledTrain = async (
   trainNum: string,
   startLocationId: number,
   classification: string
 ) => {
-  prisma.journey.create({
+  return await prisma.journey.create({
     data: {
       trainNumber: {
         connect: {
           name_classification: {
-            classification: classification,
+            classification: classification.toLocaleLowerCase(),
             name: trainNum,
           },
         },
       },
-      date: new Date(),
+      date: new Date().toISOString(),
       delay: 0,
       isCanceled: true,
     },
