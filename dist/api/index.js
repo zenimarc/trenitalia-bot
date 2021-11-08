@@ -35,12 +35,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
 exports.getSolutionsBySearchID = exports.getSearchIDByDepartureAndArrivalStations = exports.getStationNameAutocompletion = exports.getDelay = exports.getTrainInfo = exports.getSolutionsByTrainNumber = void 0;
 var cross_fetch_1 = __importDefault(require("cross-fetch"));
+var utils_1 = require("../utils/utils");
 var API = "https://app.lefrecce.it/";
 var trainNumberEndpoint = "Channels.AppApi/rest/transports";
 var trainNumberEndpoint2 = "/Channels.AppApi/rest/transports/caring";
@@ -156,7 +166,11 @@ var getStationNameAutocompletion = function (partialName) { return __awaiter(voi
 }); };
 exports.getStationNameAutocompletion = getStationNameAutocompletion;
 var getSearchIDByDepartureAndArrivalStations = function (departureStationID, arrivalStationID, departureTime, frecce, regional, maxchanges, adultNo) {
-    if (departureTime === void 0) { departureTime = new Date().toISOString(); }
+    if (departureTime === void 0) { departureTime = (function () {
+        var d = new Date();
+        d.setUTCHours(0, 0, 0, 0);
+        return d.toISOString();
+    })(); }
     if (frecce === void 0) { frecce = false; }
     if (regional === void 0) { regional = false; }
     if (maxchanges === void 0) { maxchanges = -1; }
@@ -177,34 +191,76 @@ var getSearchIDByDepartureAndArrivalStations = function (departureStationID, arr
     });
 };
 exports.getSearchIDByDepartureAndArrivalStations = getSearchIDByDepartureAndArrivalStations;
-var getSolutionsBySearchID = function (searchID, offset) {
-    if (offset === void 0) { offset = 0; }
-    return __awaiter(void 0, void 0, void 0, function () {
-        var resp, respText, respJson;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, cross_fetch_1["default"])(API +
-                        "/Channels.AppApi/rest/search/" +
-                        searchID +
-                        "/solutions?offset=" +
-                        offset +
-                        "&onlyFrecce=false&onlyRegional=false&orderby=0", { headers: headers })];
-                case 1:
-                    resp = _a.sent();
-                    return [4 /*yield*/, resp.text()];
-                case 2:
-                    respText = _a.sent();
-                    try {
-                        respJson = JSON.parse(respText);
-                        return [2 /*return*/, respJson];
-                    }
-                    catch (e) {
-                        console.log(respText);
-                        throw e;
-                    }
-                    return [2 /*return*/];
-            }
-        });
+// in questo momento non prende tutte le soluzioni, bisogna guardare a che sol id siamo arrivati
+// e confrontare con totalSol, quindi usare parametro offset per otteneree altre sol.
+var getSolutionsBySearchID = function (searchID, totalSol) { return __awaiter(void 0, void 0, void 0, function () {
+    var allSolutions, currentSol, MAX_RETRY, getPartialSol, newSol, e_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                allSolutions = [];
+                currentSol = 0;
+                MAX_RETRY = 20;
+                getPartialSol = function (offset) { return __awaiter(void 0, void 0, void 0, function () {
+                    var retry, resp, respText, respJson, e_2;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                retry = 0;
+                                _a.label = 1;
+                            case 1:
+                                if (!(retry <= MAX_RETRY)) return [3 /*break*/, 8];
+                                return [4 /*yield*/, (0, cross_fetch_1["default"])(API +
+                                        "/Channels.AppApi/rest/search/" +
+                                        searchID +
+                                        "/solutions?offset=" +
+                                        offset +
+                                        "&onlyFrecce=false&onlyRegional=false&orderby=0", { headers: headers })];
+                            case 2:
+                                resp = _a.sent();
+                                return [4 /*yield*/, resp.text()];
+                            case 3:
+                                respText = _a.sent();
+                                _a.label = 4;
+                            case 4:
+                                _a.trys.push([4, 5, , 7]);
+                                respJson = JSON.parse(respText);
+                                console.log("OK PARSE OFFSET");
+                                return [2 /*return*/, respJson];
+                            case 5:
+                                e_2 = _a.sent();
+                                retry += 1;
+                                return [4 /*yield*/, (0, utils_1.sleep)(200)];
+                            case 6:
+                                _a.sent();
+                                console.log(respText);
+                                if (retry > MAX_RETRY)
+                                    throw e_2;
+                                return [3 /*break*/, 7];
+                            case 7: return [3 /*break*/, 1];
+                            case 8: return [2 /*return*/];
+                        }
+                    });
+                }); };
+                _a.label = 1;
+            case 1:
+                if (!(currentSol < totalSol)) return [3 /*break*/, 6];
+                _a.label = 2;
+            case 2:
+                _a.trys.push([2, 4, , 5]);
+                return [4 /*yield*/, getPartialSol(currentSol)];
+            case 3:
+                newSol = _a.sent();
+                allSolutions = __spreadArray(__spreadArray([], allSolutions, true), newSol, true);
+                currentSol += newSol.length;
+                return [3 /*break*/, 5];
+            case 4:
+                e_1 = _a.sent();
+                console.log(e_1);
+                return [2 /*return*/, allSolutions];
+            case 5: return [3 /*break*/, 1];
+            case 6: return [2 /*return*/, allSolutions];
+        }
     });
-};
+}); };
 exports.getSolutionsBySearchID = getSolutionsBySearchID;

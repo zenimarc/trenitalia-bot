@@ -9,10 +9,17 @@ export const extractTrainDataFromSolution = (
     (sol) => sol.offeredTransportMeanDeparture?.name !== undefined
   )[0];
 
-  return {
-    trainName: solutionNode.offeredTransportMeanDeparture.name,
-    classification:
-      solutionNode.offeredTransportMeanDeparture.classification.classification,
-    startLocationID: solutionNode.startLocation.locationId,
-  };
+  return (
+    solutionNode && {
+      trainName: solutionNode.offeredTransportMeanDeparture.name,
+      classification:
+        solutionNode.offeredTransportMeanDeparture.classification
+          .classification,
+      startLocationID: solutionNode.startLocation.locationId,
+    }
+  );
+};
+
+export const sleep = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 };

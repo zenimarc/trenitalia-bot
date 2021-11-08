@@ -5,6 +5,7 @@ import {
   ResponseTrainNumber,
 } from "../types";
 import fetch from "cross-fetch";
+import { sleep } from "../utils/utils";
 
 const API = "https://app.lefrecce.it/";
 const trainNumberEndpoint = "Channels.AppApi/rest/transports";
@@ -102,7 +103,11 @@ export const getStationNameAutocompletion = async (
 export const getSearchIDByDepartureAndArrivalStations = async (
   departureStationID: number,
   arrivalStationID: number,
-  departureTime = new Date().toISOString(),
+  departureTime = (() => {
+    const d = new Date();
+    d.setUTCHours(0, 0, 0, 0);
+    return d.toISOString();
+  })(),
   frecce: boolean = false,
   regional: boolean = false,
   maxchanges: number = -1,
@@ -125,24 +130,47 @@ export const getSearchIDByDepartureAndArrivalStations = async (
 // e confrontare con totalSol, quindi usare parametro offset per otteneree altre sol.
 export const getSolutionsBySearchID = async (
   searchID: string,
-  totalSol: number,
-  offset = 0
+  totalSol: number
 ): Promise<RespObjectToSolutionsBySearchID[]> => {
-  const resp = await fetch(
-    API +
-      "/Channels.AppApi/rest/search/" +
-      searchID +
-      "/solutions?offset=" +
-      offset +
-      "&onlyFrecce=false&onlyRegional=false&orderby=0",
-    { headers }
-  );
-  const respText = await resp.text();
-  try {
-    const respJson = JSON.parse(respText);
-    return respJson;
-  } catch (e) {
-    console.log(respText);
-    throw e;
+  let allSolutions: RespObjectToSolutionsBySearchID[] = [];
+  let currentSol = 0;
+  const MAX_RETRY = 20;
+
+  const getPartialSol = async (offset: number) => {
+    let retry = 0;
+    while (retry <= MAX_RETRY) {
+      const resp = await fetch(
+        API +
+          "/Channels.AppApi/rest/search/" +
+          searchID +
+          "/solutions?offset=" +
+          offset +
+          "&onlyFrecce=false&onlyRegional=false&orderby=0",
+        { headers }
+      );
+      const respText = await resp.text();
+      try {
+        const respJson = JSON.parse(respText);
+        console.log("OK PARSE OFFSET");
+        return respJson;
+      } catch (e) {
+        retry += 1;
+        await sleep(200);
+        console.log(respText);
+        if (retry > MAX_RETRY) throw e;
+      }
+    }
+  };
+
+  while (currentSol < totalSol) {
+    try {
+      const newSol = await getPartialSol(currentSol);
+      allSolutions = [...allSolutions, ...newSol];
+      currentSol += newSol.length;
+    } catch (e) {
+      console.log(e);
+      return allSolutions;
+    }
   }
+  return allSolutions;
 };

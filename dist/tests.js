@@ -53,14 +53,14 @@ var main = function () { return __awaiter(void 0, void 0, void 0, function () {
             case 3:
                 _a = _b.sent(), searchId = _a.searchId, totalSolutions = _a.totalSolutions;
                 console.log(searchId, totalSolutions);
-                return [4 /*yield*/, (0, api_1.getSolutionsBySearchID)(searchId)];
+                return [4 /*yield*/, (0, api_1.getSolutionsBySearchID)(searchId, totalSolutions)];
             case 4:
                 solutions = _b.sent();
-                console.log(solutions);
-                solutionsData = solutions.map(function (sol) {
-                    return (0, utils_1.extractTrainDataFromSolution)(sol);
-                });
+                solutionsData = solutions
+                    .map(function (sol) { return (0, utils_1.extractTrainDataFromSolution)(sol); })
+                    .filter(function (sol) { return sol !== undefined; });
                 console.log(solutionsData);
+                console.log("trovate", solutionsData.length, "soluzioni su", totalSolutions);
                 return [2 /*return*/];
         }
     });

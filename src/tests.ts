@@ -4,7 +4,7 @@ import {
   getStationNameAutocompletion,
 } from "./api";
 import { ResponseAutocompletionStation } from "./types";
-import { extractTrainDataFromSolution } from "./utils/utils";
+import { extractTrainDataFromSolution, sleep } from "./utils/utils";
 
 const main = async () => {
   const startlocationID = (await getStationNameAutocompletion("domodossola"))[0]
@@ -19,13 +19,13 @@ const main = async () => {
       endlocationID
     );
   console.log(searchId, totalSolutions);
-
   const solutions = await getSolutionsBySearchID(searchId, totalSolutions);
-  console.log(solutions);
   const solutionsData = solutions.map((sol) =>
     extractTrainDataFromSolution(sol)
   );
+
   console.log(solutionsData);
+  console.log("trovate", solutionsData.length, "soluzioni su", totalSolutions);
 };
 
 main();
