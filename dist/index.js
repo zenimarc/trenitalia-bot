@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,9 +51,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 exports.__esModule = true;
 var db_access_functions_1 = require("./db_access_functions");
+var deamon_1 = require("./deamon");
 var express_1 = __importDefault(require("express"));
 var cors_1 = __importDefault(require("cors"));
 var helmet_1 = __importDefault(require("helmet"));
+var api_1 = require("./api");
+var utils_1 = require("./utils/utils");
 var cron = require("node-cron");
 var app = (0, express_1["default"])();
 app.use((0, helmet_1["default"])());
@@ -76,6 +90,100 @@ app.get("/api/user-tracking/:username", function (req, res) { return __awaiter(v
                 return [4 /*yield*/, (0, db_access_functions_1.getUserTracking)(username)];
             case 1:
                 _b.apply(_a, [_c.sent()]);
+                return [2 /*return*/];
+        }
+    });
+}); });
+app.post("/api/add-user-tracking", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, trainName, classification, startLocationID, addedTrack, e_1;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
+            case 0:
+                _a = req.body, trainName = _a.trainName, classification = _a.classification, startLocationID = _a.startLocationID;
+                _b.label = 1;
+            case 1:
+                _b.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, (0, db_access_functions_1.addUserTracking)("admin", trainName, classification, Number(startLocationID))];
+            case 2:
+                addedTrack = _b.sent();
+                res.send({ data: addedTrack, messages: "ok" });
+                return [3 /*break*/, 4];
+            case 3:
+                e_1 = _b.sent();
+                res.send({ data: {}, messages: e_1.toString() });
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
+        }
+    });
+}); });
+app.post("/api/add-user-tracking-onlynum", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var trainName, data, output, e_2;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                console.log(req.body);
+                trainName = req.body.trainName;
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, (0, db_access_functions_1.getTrainsByNumber)(trainName)];
+            case 2:
+                data = _a.sent();
+                return [4 /*yield*/, (0, db_access_functions_1.addUserTracking)("admin", data[0].transportMeanName, data[0].transportDenomination.toLocaleLowerCase(), Number(data[0].startLocation.locationId))];
+            case 3:
+                output = _a.sent();
+                res.send(__assign({}, output));
+                return [3 /*break*/, 5];
+            case 4:
+                e_2 = _a.sent();
+                res.send({ data: {}, messages: e_2.toString() });
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); });
+app.get("/api/autocomplete-station/:stationName", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var stationName, _a, _b;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                stationName = req.params.stationName;
+                _b = (_a = res).send;
+                return [4 /*yield*/, (0, api_1.getStationNameAutocompletion)(stationName)];
+            case 1:
+                _b.apply(_a, [_c.sent()]);
+                return [2 /*return*/];
+        }
+    });
+}); });
+app.get("/api/getTrainsFromStartAndEndLocations", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, startLocationID, endLocationID, _b, searchId, totalSolutions, solutions, solutionsData;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                _a = req.query, startLocationID = _a.startLocationID, endLocationID = _a.endLocationID;
+                if (!(Number(startLocationID) && Number(endLocationID))) {
+                    console.log(startLocationID, endLocationID);
+                    res.json({
+                        data: [],
+                        messages: "start and end locations must be integers"
+                    });
+                }
+                return [4 /*yield*/, (0, api_1.getSearchIDByDepartureAndArrivalStations)(Number(startLocationID), Number(endLocationID))];
+            case 1:
+                _b = _c.sent(), searchId = _b.searchId, totalSolutions = _b.totalSolutions;
+                return [4 /*yield*/, (0, api_1.getSolutionsBySearchID)(searchId, totalSolutions)];
+            case 2:
+                solutions = _c.sent();
+                solutionsData = solutions.map(function (sol) {
+                    return (0, utils_1.extractTrainDataFromSolution)(sol);
+                });
+                res.json({
+                    data: solutionsData.filter(function (elem) { return Boolean(elem); }),
+                    messages: solutionsData.length !== totalSolutions
+                        ? "trovate " + solutionsData.length + " soluzioni su " + totalSolutions
+                        : ""
+                });
                 return [2 /*return*/];
         }
     });
@@ -152,9 +260,8 @@ main();
 //getUserTracking("admin").then((data) => console.log(data));
 //getJourneysTrainByNumber("2419").then((data) =>console.log(JSON.stringify(data)));
 //getTrainsByNumber("35");
-/*cron.schedule("01 21,22,23 * * *", () => {
-  console.log("running a daily task");
-  startDeamon();
+cron.schedule("45 21,22 * * *", function () {
+    console.log("running a daily task");
+    (0, deamon_1.startDeamon)();
 });
-*/
 //startDeamon();

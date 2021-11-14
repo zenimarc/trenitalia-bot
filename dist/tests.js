@@ -37,8 +37,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var api_1 = require("./api");
+var deamon_1 = require("./deamon");
 var utils_1 = require("./utils/utils");
-var main = function () { return __awaiter(void 0, void 0, void 0, function () {
+var test1 = function () { return __awaiter(void 0, void 0, void 0, function () {
     var startlocationID, endlocationID, _a, searchId, totalSolutions, solutions, solutionsData;
     return __generator(this, function (_b) {
         switch (_b.label) {
@@ -56,11 +57,22 @@ var main = function () { return __awaiter(void 0, void 0, void 0, function () {
                 return [4 /*yield*/, (0, api_1.getSolutionsBySearchID)(searchId, totalSolutions)];
             case 4:
                 solutions = _b.sent();
-                solutionsData = solutions
-                    .map(function (sol) { return (0, utils_1.extractTrainDataFromSolution)(sol); })
-                    .filter(function (sol) { return sol !== undefined; });
+                solutionsData = solutions.map(function (sol) {
+                    return (0, utils_1.extractTrainDataFromSolution)(sol);
+                });
                 console.log(solutionsData);
                 console.log("trovate", solutionsData.length, "soluzioni su", totalSolutions);
+                return [2 /*return*/];
+        }
+    });
+}); };
+var main = function () { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, (0, deamon_1.startDeamon)()];
+            case 1:
+                _a.sent();
+                console.log("demone finito");
                 return [2 /*return*/];
         }
     });

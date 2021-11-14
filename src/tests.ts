@@ -3,10 +3,11 @@ import {
   getSolutionsBySearchID,
   getStationNameAutocompletion,
 } from "./api";
+import { startDeamon } from "./deamon";
 import { ResponseAutocompletionStation } from "./types";
 import { extractTrainDataFromSolution, sleep } from "./utils/utils";
 
-const main = async () => {
+const test1 = async () => {
   const startlocationID = (await getStationNameAutocompletion("domodossola"))[0]
     .locationId;
   const endlocationID = (
@@ -26,6 +27,11 @@ const main = async () => {
 
   console.log(solutionsData);
   console.log("trovate", solutionsData.length, "soluzioni su", totalSolutions);
+};
+
+const main = async () => {
+  await startDeamon();
+  console.log("demone finito");
 };
 
 main();

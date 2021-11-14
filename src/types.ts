@@ -71,6 +71,14 @@ export interface RespObjectToSolutionsBySearchID {
   ];
 }
 
-export interface UserTrackings {
-  trainNumberId: string;
+export interface UserTracking {
+  name: string;
+  classification: string;
+  departureLocationID: number;
+}
+
+export interface ResponseAPI {
+  data: [];
+  messages?: string;
+  errors?: [{ message: string }];
 }

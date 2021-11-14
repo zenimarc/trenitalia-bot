@@ -3,7 +3,11 @@ import { RespObjectToSolutionsBySearchID } from "../types";
 export const extractTrainDataFromSolution = (
   respObj: RespObjectToSolutionsBySearchID
 ):
-  | { trainName: string; classification: string; startLocationID: number }
+  | {
+      trainName: string;
+      classification: string;
+      startLocationID: number;
+    }
   | undefined => {
   const solutionNode = respObj.solutionNodes.filter(
     (sol) => sol.offeredTransportMeanDeparture?.name !== undefined

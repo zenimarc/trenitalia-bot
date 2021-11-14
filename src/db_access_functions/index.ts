@@ -3,7 +3,7 @@ import {
   ResponseTrainLine,
   ResponseTrainNumber,
   TrainStops,
-  UserTrackings,
+  UserTracking,
 } from "../types";
 import {
   getDelay,
@@ -34,7 +34,8 @@ export const addUser = async (name: string) => {
 export const addUserTracking = async (
   username: string,
   trainNumber: string,
-  classification: string
+  classification: string,
+  startLocation: number
 ) => {
   const user = await prisma.user.findFirst({
     where: {
@@ -49,18 +50,39 @@ export const addUserTracking = async (
     where: {
       name_classification: {
         name: trainNumber,
-        classification: classification,
+        classification: classification.toLocaleLowerCase(),
       },
     },
   });
+
+  let addedTrainID = null;
   if (!Train) {
+    addedTrainID = await syncTrainByNumber(
+      trainNumber,
+      classification,
+      startLocation
+    );
+  }
+
+  if (!addedTrainID && !Train?.id) {
     throw Error("train not found");
+  }
+
+  const alreadyPresent = await prisma.userTrackTracking.findFirst({
+    where: {
+      trainNumberId: Train?.id ?? (addedTrainID as string),
+      userId: user.id,
+    },
+  });
+  console.log(alreadyPresent);
+  if (alreadyPresent?.trainNumberId) {
+    throw Error("train already synced");
   }
 
   return await prisma.userTrackTracking.create({
     data: {
       userId: user.id,
-      trainNumberId: Train.id,
+      trainNumberId: Train?.id ?? (addedTrainID as string),
     },
   });
 };
@@ -138,7 +160,7 @@ export const syncTrainByNumber = async (
         },
       }));
     if (existJourney) {
-      console.log("update del journey ", existJourney.date);
+      console.log("update del journey ", trainNumber.name, existJourney.date);
       await prisma.journey.update({
         where: {
           id: existJourney.id,
@@ -167,8 +189,9 @@ export const syncTrainByNumber = async (
           })
           .catch((e) => console.log(e));
       }
+      return existJourney.trainNumberId;
     } else {
-      await prisma.journey.create({
+      const created = await prisma.journey.create({
         data: {
           date: respJson.dateOfferedTransportMeanDeparture.date,
           trainNumber: {
@@ -235,6 +258,12 @@ export const syncTrainByNumber = async (
           delay: respJson.delay,
         },
       });
+      console.log(
+        "created entry for",
+        respJson.dateOfferedTransportMeanDeparture.name,
+        respJson.dateOfferedTransportMeanDeparture.date
+      );
+      return created.trainNumberId;
     }
   } catch (e) {
     const err = e as Error;
@@ -244,6 +273,7 @@ export const syncTrainByNumber = async (
       console.log("treno", trainNum, "cancellato");
       addCanceledTrain(trainNum, startLocation, classification);
     }
+    return null;
   }
 };
 

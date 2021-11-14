@@ -13,6 +13,13 @@ import { startDeamon } from "./deamon";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import {
+  getSearchIDByDepartureAndArrivalStations,
+  getSolutionsBySearchID,
+  getStationNameAutocompletion,
+} from "./api";
+import { extractTrainDataFromSolution } from "./utils/utils";
+import { ResponseAPI } from "./types";
 
 var cron = require("node-cron");
 
@@ -36,6 +43,74 @@ app.get("/api/trainNumber/:id", async (req, res) => {
 app.get("/api/user-tracking/:username", async (req, res) => {
   const username = req.params.username;
   res.send(await getUserTracking(username));
+});
+
+app.post("/api/add-user-tracking", async (req, res) => {
+  const { trainName, classification, startLocationID } = req.body;
+  try {
+    const addedTrack = await addUserTracking(
+      "admin",
+      trainName as string,
+      classification as string,
+      Number(startLocationID)
+    );
+    res.send({ data: addedTrack, messages: "ok" });
+  } catch (e) {
+    res.send({ data: {}, messages: (e as Error).toString() });
+  }
+});
+
+app.post("/api/add-user-tracking-onlynum", async (req, res) => {
+  console.log(req.body);
+  const { trainName } = req.body;
+  try {
+    const data = await getTrainsByNumber(trainName);
+    const output = await addUserTracking(
+      "admin",
+      data[0].transportMeanName,
+      data[0].transportDenomination.toLocaleLowerCase(),
+      Number(data[0].startLocation.locationId)
+    );
+
+    res.send({ ...output });
+  } catch (e) {
+    res.send({ data: {}, messages: (e as Error).toString() });
+  }
+});
+
+app.get("/api/autocomplete-station/:stationName", async (req, res) => {
+  const stationName = req.params.stationName;
+  res.send(await getStationNameAutocompletion(stationName));
+});
+
+app.get("/api/getTrainsFromStartAndEndLocations", async (req, res) => {
+  const { startLocationID, endLocationID } = req.query;
+  if (!(Number(startLocationID) && Number(endLocationID))) {
+    console.log(startLocationID, endLocationID);
+    res.json({
+      data: [],
+      messages: "start and end locations must be integers",
+    } as ResponseAPI);
+  }
+
+  const { searchId, totalSolutions } =
+    await getSearchIDByDepartureAndArrivalStations(
+      Number(startLocationID),
+      Number(endLocationID)
+    );
+  //console.log(searchId, totalSolutions);
+  const solutions = await getSolutionsBySearchID(searchId, totalSolutions);
+  const solutionsData = solutions.map((sol) =>
+    extractTrainDataFromSolution(sol)
+  );
+
+  res.json({
+    data: solutionsData.filter((elem) => Boolean(elem)),
+    messages:
+      solutionsData.length !== totalSolutions
+        ? "trovate " + solutionsData.length + " soluzioni su " + totalSolutions
+        : "",
+  } as ResponseAPI);
 });
 
 app.listen(port, () => {
@@ -115,10 +190,9 @@ main();
 
 //getTrainsByNumber("35");
 
-/*cron.schedule("01 21,22,23 * * *", () => {
+cron.schedule("45 21,22 * * *", () => {
   console.log("running a daily task");
   startDeamon();
 });
-*/
 
 //startDeamon();
