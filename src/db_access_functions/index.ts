@@ -17,7 +17,7 @@ import { JourneyStation } from "../../prisma/generated/prisma-client-js/index.js
 import { connect } from "http2";
 import { UserNotFoundError } from "../utils/exceptions";
 
-const prisma = new PrismaClient();
+export const prisma = new PrismaClient();
 
 export const addUser = async (name: string) => {
   try {
@@ -65,7 +65,12 @@ export const addUserTracking = async (
   }
 
   if (!addedTrainID && !Train?.id) {
-    throw Error("train not found");
+    console.log("------------errore di sync ----------------------");
+    console.log("addedtrainID: ", addedTrainID);
+    console.log("Train: ", Train);
+    console.log(username, trainNumber, classification, startLocation);
+    console.log("----------------------------------------");
+    throw Error("train not found " + trainNumber);
   }
 
   const alreadyPresent = await prisma.userTrackTracking.findFirst({
@@ -95,7 +100,9 @@ export const getUserTracking = async (username: string) => {
     include: {
       trackedTrains: {
         include: {
-          trainNumber: true,
+          trainNumber: {
+            include: { departureLocation: true, arrivalLocation: true },
+          },
         },
       },
     },
@@ -108,6 +115,8 @@ export const getUserTracking = async (username: string) => {
       name: x.trainNumber.name,
       classification: x.trainNumber.classification,
       departureLocationId: x.trainNumber.departureLocationId,
+      departureLocationName: x.trainNumber.departureLocation.name,
+      arrivalLocationName: x.trainNumber.arrivalLocation.name,
     };
   });
 };
@@ -119,6 +128,26 @@ export const getJourneysTrainByNumber = async (trainNumber: string) => {
     },
     include: {
       journeys: { include: { stations: true } },
+      departureLocation: true,
+      arrivalLocation: true,
+    },
+  });
+  return train;
+};
+
+export const getJourneysTrainByNumberAndLocationId = async (
+  trainNumber: string,
+  locationId: number
+) => {
+  const train = await prisma.trainNumber.findFirst({
+    where: {
+      name: trainNumber,
+      departureLocationId: locationId,
+    },
+    include: {
+      journeys: { include: { stations: true } },
+      departureLocation: true,
+      arrivalLocation: true,
     },
   });
   return train;
@@ -135,6 +164,7 @@ export const syncTrainByNumber = async (
 ) => {
   try {
     const respJson = await getTrainInfo(trainNum, startLocation);
+
     //console.log("\n\n resp json:", respJson);
 
     const trainNumber = await prisma.trainNumber.findUnique({
@@ -271,7 +301,7 @@ export const syncTrainByNumber = async (
     if (err.message === "canceled") {
       // treno cancellato ho solo resp getTrainInfo in .text()
       console.log("treno", trainNum, "cancellato");
-      addCanceledTrain(trainNum, startLocation, classification);
+      await addCanceledTrain(trainNum, startLocation, classification);
     }
     return null;
   }

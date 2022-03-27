@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -57,6 +46,7 @@ var cors_1 = __importDefault(require("cors"));
 var helmet_1 = __importDefault(require("helmet"));
 var api_1 = require("./api");
 var utils_1 = require("./utils/utils");
+var train_1 = require("./db_access_functions/train");
 var cron = require("node-cron");
 var app = (0, express_1["default"])();
 app.use((0, helmet_1["default"])());
@@ -74,9 +64,34 @@ app.get("/api/trainNumber/:id", function (req, res) { return __awaiter(void 0, v
                 id = req.params.id;
                 _b = (_a = res).send;
                 return [4 /*yield*/, (0, db_access_functions_1.getJourneysTrainByNumber)(id)];
+            case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
+        }
+    });
+}); });
+// to get trains by trainNumber and startLocationId
+app.get("/api/train", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var trainNumber, startLocationId, _a, _b;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                trainNumber = req.query.trainNumber;
+                startLocationId = Number(req.query.startLocationId);
+                _b = (_a = res).send;
+                return [4 /*yield*/, (0, db_access_functions_1.getJourneysTrainByNumberAndLocationId)(trainNumber, startLocationId)];
+            case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
+        }
+    });
+}); });
+app.get("/api/synced-train/:trainName", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var trainName, trains;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                trainName = req.params.trainName;
+                return [4 /*yield*/, (0, train_1.getSyncedTrainsByNumber)(trainName)];
             case 1:
-                _b.apply(_a, [_c.sent()]);
-                return [2 /*return*/];
+                trains = _a.sent();
+                return [2 /*return*/, res.json(trains)];
         }
     });
 }); });
@@ -100,18 +115,19 @@ app.post("/api/add-user-tracking", function (req, res) { return __awaiter(void 0
         switch (_b.label) {
             case 0:
                 _a = req.body, trainName = _a.trainName, classification = _a.classification, startLocationID = _a.startLocationID;
+                console.log(trainName, classification, startLocationID);
                 _b.label = 1;
             case 1:
                 _b.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, (0, db_access_functions_1.addUserTracking)("admin", trainName, classification, Number(startLocationID))];
+                return [4 /*yield*/, (0, db_access_functions_1.addUserTracking)("admin", trainName, classification.toLocaleLowerCase(), Number(startLocationID))];
             case 2:
                 addedTrack = _b.sent();
-                res.send({ data: addedTrack, messages: "ok" });
-                return [3 /*break*/, 4];
+                return [2 /*return*/, res.send({ data: addedTrack, messages: "ok" })];
             case 3:
                 e_1 = _b.sent();
-                res.send({ data: {}, messages: e_1.toString() });
-                return [3 /*break*/, 4];
+                return [2 /*return*/, res
+                        .status(400)
+                        .send({ data: {}, messages: e_1.toString() })];
             case 4: return [2 /*return*/];
         }
     });
@@ -129,16 +145,60 @@ app.post("/api/add-user-tracking-onlynum", function (req, res) { return __awaite
                 return [4 /*yield*/, (0, db_access_functions_1.getTrainsByNumber)(trainName)];
             case 2:
                 data = _a.sent();
+                console.log(data.length, data);
+                if (data.length > 1) {
+                    // need to select which train with same number
+                    return [2 /*return*/, res.send({
+                            data: data,
+                            messages: "multiple trains with same number, select one"
+                        })];
+                }
                 return [4 /*yield*/, (0, db_access_functions_1.addUserTracking)("admin", data[0].transportMeanName, data[0].transportDenomination.toLocaleLowerCase(), Number(data[0].startLocation.locationId))];
             case 3:
                 output = _a.sent();
-                res.send(__assign({}, output));
+                res.send({ data: output, messages: "ok" });
                 return [3 /*break*/, 5];
             case 4:
                 e_2 = _a.sent();
                 res.send({ data: {}, messages: e_2.toString() });
                 return [3 /*break*/, 5];
             case 5: return [2 /*return*/];
+        }
+    });
+}); });
+app.get("/api/autocomplete-by-train-number", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var trainName, data, e_3;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                trainName = req.query.trainName;
+                console.log(trainName);
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, (0, db_access_functions_1.getTrainsByNumber)(trainName)];
+            case 2:
+                data = _a.sent();
+                if (data.length > 1) {
+                    // need to select which train with same number
+                    console.log(data);
+                    return [2 /*return*/, res.json({
+                            data: data,
+                            messages: "multiple trains with same number, select one"
+                        })];
+                }
+                else {
+                    return [2 /*return*/, res.json({
+                            data: data,
+                            messages: "ok"
+                        })];
+                }
+                return [3 /*break*/, 4];
+            case 3:
+                e_3 = _a.sent();
+                res.send({ data: {}, messages: e_3.toString() });
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
         }
     });
 }); });

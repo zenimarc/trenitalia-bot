@@ -3,6 +3,7 @@ import {
   getUserTracking,
   syncTrainByNumber,
 } from "./db_access_functions";
+import { UserTracking } from "./types";
 import { sleep } from "./utils/utils";
 
 const MAX_RETRIES = 3;
@@ -38,7 +39,9 @@ export const startDeamon = async () => {
   }
 };
 
-const retryErrors = async (listToRetry: SyncList[]): Promise<SyncList[]> => {
+const retryErrors = async (
+  listToRetry: UserTracking[]
+): Promise<UserTracking[]> => {
   const pendingRetries = [];
   for (const tracking of listToRetry) {
     try {
@@ -54,9 +57,3 @@ const retryErrors = async (listToRetry: SyncList[]): Promise<SyncList[]> => {
   }
   return pendingRetries;
 };
-
-interface SyncList {
-  name: string;
-  classification: string;
-  departureLocationId: number;
-}

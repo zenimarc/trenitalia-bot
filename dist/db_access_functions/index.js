@@ -36,18 +36,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.addCanceledTrain = exports.syncTrainByNumber = exports.getTrainsByNumber = exports.getJourneysTrainByNumber = exports.getUserTracking = exports.addUserTracking = exports.addUser = void 0;
+exports.addCanceledTrain = exports.syncTrainByNumber = exports.getTrainsByNumber = exports.getJourneysTrainByNumberAndLocationId = exports.getJourneysTrainByNumber = exports.getUserTracking = exports.addUserTracking = exports.addUser = exports.prisma = void 0;
 var api_1 = require("../api");
 var index_js_1 = require("../../prisma/generated/prisma-client-js/index.js");
 var exceptions_1 = require("../utils/exceptions");
-var prisma = new index_js_1.PrismaClient();
+exports.prisma = new index_js_1.PrismaClient();
 var addUser = function (name) { return __awaiter(void 0, void 0, void 0, function () {
     var e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, prisma.user.create({
+                return [4 /*yield*/, exports.prisma.user.create({
                         data: {
                             username: name
                         }
@@ -67,7 +67,7 @@ var addUserTracking = function (username, trainNumber, classification, startLoca
     var _a, _b;
     return __generator(this, function (_c) {
         switch (_c.label) {
-            case 0: return [4 /*yield*/, prisma.user.findFirst({
+            case 0: return [4 /*yield*/, exports.prisma.user.findFirst({
                     where: {
                         username: username
                     }
@@ -77,7 +77,7 @@ var addUserTracking = function (username, trainNumber, classification, startLoca
                 if (!user) {
                     throw Error("User not found");
                 }
-                return [4 /*yield*/, prisma.trainNumber.findUnique({
+                return [4 /*yield*/, exports.prisma.trainNumber.findUnique({
                         where: {
                             name_classification: {
                                 name: trainNumber,
@@ -95,9 +95,14 @@ var addUserTracking = function (username, trainNumber, classification, startLoca
                 _c.label = 4;
             case 4:
                 if (!addedTrainID && !(Train === null || Train === void 0 ? void 0 : Train.id)) {
-                    throw Error("train not found");
+                    console.log("------------errore di sync ----------------------");
+                    console.log("addedtrainID: ", addedTrainID);
+                    console.log("Train: ", Train);
+                    console.log(username, trainNumber, classification, startLocation);
+                    console.log("----------------------------------------");
+                    throw Error("train not found " + trainNumber);
                 }
-                return [4 /*yield*/, prisma.userTrackTracking.findFirst({
+                return [4 /*yield*/, exports.prisma.userTrackTracking.findFirst({
                         where: {
                             trainNumberId: (_a = Train === null || Train === void 0 ? void 0 : Train.id) !== null && _a !== void 0 ? _a : addedTrainID,
                             userId: user.id
@@ -109,7 +114,7 @@ var addUserTracking = function (username, trainNumber, classification, startLoca
                 if (alreadyPresent === null || alreadyPresent === void 0 ? void 0 : alreadyPresent.trainNumberId) {
                     throw Error("train already synced");
                 }
-                return [4 /*yield*/, prisma.userTrackTracking.create({
+                return [4 /*yield*/, exports.prisma.userTrackTracking.create({
                         data: {
                             userId: user.id,
                             trainNumberId: (_b = Train === null || Train === void 0 ? void 0 : Train.id) !== null && _b !== void 0 ? _b : addedTrainID
@@ -124,14 +129,16 @@ var getUserTracking = function (username) { return __awaiter(void 0, void 0, voi
     var user;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, prisma.user.findFirst({
+            case 0: return [4 /*yield*/, exports.prisma.user.findFirst({
                     where: {
                         username: username
                     },
                     include: {
                         trackedTrains: {
                             include: {
-                                trainNumber: true
+                                trainNumber: {
+                                    include: { departureLocation: true, arrivalLocation: true }
+                                }
                             }
                         }
                     }
@@ -145,7 +152,9 @@ var getUserTracking = function (username) { return __awaiter(void 0, void 0, voi
                         return {
                             name: x.trainNumber.name,
                             classification: x.trainNumber.classification,
-                            departureLocationId: x.trainNumber.departureLocationId
+                            departureLocationId: x.trainNumber.departureLocationId,
+                            departureLocationName: x.trainNumber.departureLocation.name,
+                            arrivalLocationName: x.trainNumber.arrivalLocation.name
                         };
                     })];
         }
@@ -156,12 +165,14 @@ var getJourneysTrainByNumber = function (trainNumber) { return __awaiter(void 0,
     var train;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, prisma.trainNumber.findFirst({
+            case 0: return [4 /*yield*/, exports.prisma.trainNumber.findFirst({
                     where: {
                         name: trainNumber
                     },
                     include: {
-                        journeys: { include: { stations: true } }
+                        journeys: { include: { stations: true } },
+                        departureLocation: true,
+                        arrivalLocation: true
                     }
                 })];
             case 1:
@@ -171,6 +182,28 @@ var getJourneysTrainByNumber = function (trainNumber) { return __awaiter(void 0,
     });
 }); };
 exports.getJourneysTrainByNumber = getJourneysTrainByNumber;
+var getJourneysTrainByNumberAndLocationId = function (trainNumber, locationId) { return __awaiter(void 0, void 0, void 0, function () {
+    var train;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, exports.prisma.trainNumber.findFirst({
+                    where: {
+                        name: trainNumber,
+                        departureLocationId: locationId
+                    },
+                    include: {
+                        journeys: { include: { stations: true } },
+                        departureLocation: true,
+                        arrivalLocation: true
+                    }
+                })];
+            case 1:
+                train = _a.sent();
+                return [2 /*return*/, train];
+        }
+    });
+}); };
+exports.getJourneysTrainByNumberAndLocationId = getJourneysTrainByNumberAndLocationId;
 var getTrainsByNumber = function (trainNum) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         return [2 /*return*/, (0, api_1.getSolutionsByTrainNumber)(trainNum)];
@@ -182,11 +215,11 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
-                _c.trys.push([0, 13, , 14]);
+                _c.trys.push([0, 13, , 16]);
                 return [4 /*yield*/, (0, api_1.getTrainInfo)(trainNum, startLocation)];
             case 1:
                 respJson = _c.sent();
-                return [4 /*yield*/, prisma.trainNumber.findUnique({
+                return [4 /*yield*/, exports.prisma.trainNumber.findUnique({
                         where: {
                             name_classification: {
                                 name: respJson.dateOfferedTransportMeanDeparture.name,
@@ -199,7 +232,7 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
                 trainId = trainNumber === null || trainNumber === void 0 ? void 0 : trainNumber.id;
                 _a = trainId;
                 if (!_a) return [3 /*break*/, 4];
-                return [4 /*yield*/, prisma.journey.findUnique({
+                return [4 /*yield*/, exports.prisma.journey.findUnique({
                         where: {
                             trainNumberId_date: {
                                 trainNumberId: trainId,
@@ -214,7 +247,7 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
                 existJourney = _a;
                 if (!existJourney) return [3 /*break*/, 10];
                 console.log("update del journey ", trainNumber.name, existJourney.date);
-                return [4 /*yield*/, prisma.journey.update({
+                return [4 /*yield*/, exports.prisma.journey.update({
                         where: {
                             id: existJourney.id
                         },
@@ -229,7 +262,7 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
             case 6:
                 if (!(_i < _b.length)) return [3 /*break*/, 9];
                 stop_1 = _b[_i];
-                return [4 /*yield*/, prisma.journeyStation
+                return [4 /*yield*/, exports.prisma.journeyStation
                         .update({
                         where: {
                             journeyId_stationId: {
@@ -253,7 +286,7 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
                 _i++;
                 return [3 /*break*/, 6];
             case 9: return [2 /*return*/, existJourney.trainNumberId];
-            case 10: return [4 /*yield*/, prisma.journey.create({
+            case 10: return [4 /*yield*/, exports.prisma.journey.create({
                     data: {
                         date: respJson.dateOfferedTransportMeanDeparture.date,
                         trainNumber: {
@@ -322,18 +355,20 @@ var syncTrainByNumber = function (trainNum, classification, startLocation) { ret
                 created = _c.sent();
                 console.log("created entry for", respJson.dateOfferedTransportMeanDeparture.name, respJson.dateOfferedTransportMeanDeparture.date);
                 return [2 /*return*/, created.trainNumberId];
-            case 12: return [3 /*break*/, 14];
+            case 12: return [3 /*break*/, 16];
             case 13:
                 e_2 = _c.sent();
                 err = e_2;
                 console.log(e_2);
-                if (err.message === "canceled") {
-                    // treno cancellato ho solo resp getTrainInfo in .text()
-                    console.log("treno", trainNum, "cancellato");
-                    (0, exports.addCanceledTrain)(trainNum, startLocation, classification);
-                }
-                return [2 /*return*/, null];
-            case 14: return [2 /*return*/];
+                if (!(err.message === "canceled")) return [3 /*break*/, 15];
+                // treno cancellato ho solo resp getTrainInfo in .text()
+                console.log("treno", trainNum, "cancellato");
+                return [4 /*yield*/, (0, exports.addCanceledTrain)(trainNum, startLocation, classification)];
+            case 14:
+                _c.sent();
+                _c.label = 15;
+            case 15: return [2 /*return*/, null];
+            case 16: return [2 /*return*/];
         }
     });
 }); };
@@ -341,7 +376,7 @@ exports.syncTrainByNumber = syncTrainByNumber;
 var addCanceledTrain = function (trainNum, startLocationId, classification) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, prisma.journey.create({
+            case 0: return [4 /*yield*/, exports.prisma.journey.create({
                     data: {
                         trainNumber: {
                             connect: {

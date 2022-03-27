@@ -76,7 +76,14 @@ export const getTrainInfo = async (
     if (respText.includes("has been canceled")) {
       throw Error("canceled");
     } else {
-      console.log("errore fetch di ", trainNumber);
+      console.log(
+        "errore fetch di",
+        trainNumber,
+        "startLocation:",
+        startLocation,
+        "url:",
+        url
+      );
       console.log(respText);
       throw e;
     }

@@ -6,6 +6,7 @@ import {
   getJourneysTrainByNumber,
   getTrainsByNumber,
   addCanceledTrain,
+  getJourneysTrainByNumberAndLocationId,
 } from "./db_access_functions";
 
 import { startDeamon } from "./deamon";
@@ -20,6 +21,7 @@ import {
 } from "./api";
 import { extractTrainDataFromSolution } from "./utils/utils";
 import { ResponseAPI } from "./types";
+import { getSyncedTrainsByNumber } from "./db_access_functions/train";
 
 var cron = require("node-cron");
 
@@ -37,7 +39,23 @@ app.get("/", (req, res) => {
 app.get("/api/trainNumber/:id", async (req, res) => {
   const id = req.params.id;
 
-  res.send(await getJourneysTrainByNumber(id));
+  return res.send(await getJourneysTrainByNumber(id));
+});
+
+// to get trains by trainNumber and startLocationId
+app.get("/api/train", async (req, res) => {
+  const trainNumber = req.query.trainNumber as string;
+  const startLocationId = Number(req.query.startLocationId);
+
+  return res.send(
+    await getJourneysTrainByNumberAndLocationId(trainNumber, startLocationId)
+  );
+});
+
+app.get("/api/synced-train/:trainName", async (req, res) => {
+  const trainName = req.params.trainName;
+  const trains = await getSyncedTrainsByNumber(trainName);
+  return res.json(trains);
 });
 
 app.get("/api/user-tracking/:username", async (req, res) => {
@@ -47,16 +65,19 @@ app.get("/api/user-tracking/:username", async (req, res) => {
 
 app.post("/api/add-user-tracking", async (req, res) => {
   const { trainName, classification, startLocationID } = req.body;
+  console.log(trainName, classification, startLocationID);
   try {
     const addedTrack = await addUserTracking(
       "admin",
       trainName as string,
-      classification as string,
+      (classification as string).toLocaleLowerCase(),
       Number(startLocationID)
     );
-    res.send({ data: addedTrack, messages: "ok" });
+    return res.send({ data: addedTrack, messages: "ok" });
   } catch (e) {
-    res.send({ data: {}, messages: (e as Error).toString() });
+    return res
+      .status(400)
+      .send({ data: {}, messages: (e as Error).toString() });
   }
 });
 
@@ -65,6 +86,14 @@ app.post("/api/add-user-tracking-onlynum", async (req, res) => {
   const { trainName } = req.body;
   try {
     const data = await getTrainsByNumber(trainName);
+    console.log(data.length, data);
+    if (data.length > 1) {
+      // need to select which train with same number
+      return res.send({
+        data,
+        messages: "multiple trains with same number, select one",
+      });
+    }
     const output = await addUserTracking(
       "admin",
       data[0].transportMeanName,
@@ -72,7 +101,30 @@ app.post("/api/add-user-tracking-onlynum", async (req, res) => {
       Number(data[0].startLocation.locationId)
     );
 
-    res.send({ ...output });
+    res.send({ data: output, messages: "ok" });
+  } catch (e) {
+    res.send({ data: {}, messages: (e as Error).toString() });
+  }
+});
+
+app.get("/api/autocomplete-by-train-number", async (req, res) => {
+  const { trainName } = req.query;
+  console.log(trainName);
+  try {
+    const data = await getTrainsByNumber(trainName as string);
+    if (data.length > 1) {
+      // need to select which train with same number
+      console.log(data);
+      return res.json({
+        data,
+        messages: "multiple trains with same number, select one",
+      });
+    } else {
+      return res.json({
+        data,
+        messages: "ok",
+      });
+    }
   } catch (e) {
     res.send({ data: {}, messages: (e as Error).toString() });
   }
