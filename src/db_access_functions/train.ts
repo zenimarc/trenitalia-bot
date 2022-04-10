@@ -11,3 +11,5 @@ export const getSyncedTrainsByNumber = async (trainNum: string) => {
     },
   });
 };
+
+export const Train = prisma.trainNumber;

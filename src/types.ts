@@ -84,3 +84,8 @@ export interface ResponseAPI {
   messages?: string;
   errors?: [{ message: string }];
 }
+
+export type DelayDataCharts = {
+  date: string;
+  value: number;
+}[];

@@ -70,15 +70,59 @@ app.get("/api/trainNumber/:id", function (req, res) { return __awaiter(void 0, v
 }); });
 // to get trains by trainNumber and startLocationId
 app.get("/api/train", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var trainNumber, startLocationId, _a, _b;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
+    var trainNumber, startLocationId, startDateString, endDateString, train, e_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
             case 0:
+                _a.trys.push([0, 2, , 3]);
                 trainNumber = req.query.trainNumber;
                 startLocationId = Number(req.query.startLocationId);
-                _b = (_a = res).send;
-                return [4 /*yield*/, (0, db_access_functions_1.getJourneysTrainByNumberAndLocationId)(trainNumber, startLocationId)];
-            case 1: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
+                if (isNaN(startLocationId)) {
+                    return [2 /*return*/, res
+                            .status(400)
+                            .send({ error: "startLocationId must be an integer" })];
+                }
+                startDateString = req.query.startDate;
+                endDateString = req.query.endDate;
+                return [4 /*yield*/, train_1.Train.findFirst({
+                        where: {
+                            name: trainNumber,
+                            departureLocationId: startLocationId
+                        },
+                        include: {
+                            journeys: {
+                                where: {
+                                    AND: [
+                                        {
+                                            date: {
+                                                gte: startDateString
+                                                    ? new Date(startDateString)
+                                                    : undefined
+                                            }
+                                        },
+                                        {
+                                            date: {
+                                                lte: endDateString
+                                                    ? new Date(endDateString)
+                                                    : undefined
+                                            }
+                                        },
+                                    ]
+                                },
+                                include: { stations: true }
+                            },
+                            departureLocation: true,
+                            arrivalLocation: true
+                        }
+                    })];
+            case 1:
+                train = _a.sent();
+                return [2 /*return*/, res.send(train)];
+            case 2:
+                e_1 = _a.sent();
+                console.log(e_1);
+                return [2 /*return*/, res.sendStatus(400)];
+            case 3: return [2 /*return*/];
         }
     });
 }); });
@@ -110,7 +154,7 @@ app.get("/api/user-tracking/:username", function (req, res) { return __awaiter(v
     });
 }); });
 app.post("/api/add-user-tracking", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, trainName, classification, startLocationID, addedTrack, e_1;
+    var _a, trainName, classification, startLocationID, addedTrack, e_2;
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
@@ -124,16 +168,16 @@ app.post("/api/add-user-tracking", function (req, res) { return __awaiter(void 0
                 addedTrack = _b.sent();
                 return [2 /*return*/, res.send({ data: addedTrack, messages: "ok" })];
             case 3:
-                e_1 = _b.sent();
+                e_2 = _b.sent();
                 return [2 /*return*/, res
                         .status(400)
-                        .send({ data: {}, messages: e_1.toString() })];
+                        .send({ data: {}, messages: e_2.toString() })];
             case 4: return [2 /*return*/];
         }
     });
 }); });
 app.post("/api/add-user-tracking-onlynum", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var trainName, data, output, e_2;
+    var trainName, data, output, e_3;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -159,15 +203,15 @@ app.post("/api/add-user-tracking-onlynum", function (req, res) { return __awaite
                 res.send({ data: output, messages: "ok" });
                 return [3 /*break*/, 5];
             case 4:
-                e_2 = _a.sent();
-                res.send({ data: {}, messages: e_2.toString() });
+                e_3 = _a.sent();
+                res.send({ data: {}, messages: e_3.toString() });
                 return [3 /*break*/, 5];
             case 5: return [2 /*return*/];
         }
     });
 }); });
 app.get("/api/autocomplete-by-train-number", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var trainName, data, e_3;
+    var trainName, data, e_4;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -195,8 +239,8 @@ app.get("/api/autocomplete-by-train-number", function (req, res) { return __awai
                 }
                 return [3 /*break*/, 4];
             case 3:
-                e_3 = _a.sent();
-                res.send({ data: {}, messages: e_3.toString() });
+                e_4 = _a.sent();
+                res.send({ data: {}, messages: e_4.toString() });
                 return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
         }

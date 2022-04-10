@@ -6,7 +6,6 @@ import {
   getJourneysTrainByNumber,
   getTrainsByNumber,
   addCanceledTrain,
-  getJourneysTrainByNumberAndLocationId,
 } from "./db_access_functions";
 
 import { startDeamon } from "./deamon";
@@ -21,7 +20,7 @@ import {
 } from "./api";
 import { extractTrainDataFromSolution } from "./utils/utils";
 import { ResponseAPI } from "./types";
-import { getSyncedTrainsByNumber } from "./db_access_functions/train";
+import { getSyncedTrainsByNumber, Train } from "./db_access_functions/train";
 
 var cron = require("node-cron");
 
@@ -44,12 +43,53 @@ app.get("/api/trainNumber/:id", async (req, res) => {
 
 // to get trains by trainNumber and startLocationId
 app.get("/api/train", async (req, res) => {
-  const trainNumber = req.query.trainNumber as string;
-  const startLocationId = Number(req.query.startLocationId);
+  try {
+    const trainNumber = req.query.trainNumber as string;
+    const startLocationId = Number(req.query.startLocationId);
+    if (isNaN(startLocationId)) {
+      return res
+        .status(400)
+        .send({ error: "startLocationId must be an integer" });
+    }
+    const startDateString = req.query.startDate;
+    const endDateString = req.query.endDate;
 
-  return res.send(
-    await getJourneysTrainByNumberAndLocationId(trainNumber, startLocationId)
-  );
+    const train = await Train.findFirst({
+      where: {
+        name: trainNumber,
+        departureLocationId: startLocationId,
+      },
+      include: {
+        journeys: {
+          where: {
+            AND: [
+              {
+                date: {
+                  gte: startDateString
+                    ? new Date(startDateString as string)
+                    : undefined,
+                },
+              },
+              {
+                date: {
+                  lte: endDateString
+                    ? new Date(endDateString as string)
+                    : undefined,
+                },
+              },
+            ],
+          },
+          include: { stations: true },
+        },
+        departureLocation: true,
+        arrivalLocation: true,
+      },
+    });
+    return res.send(train);
+  } catch (e) {
+    console.log(e);
+    return res.sendStatus(400);
+  }
 });
 
 app.get("/api/synced-train/:trainName", async (req, res) => {

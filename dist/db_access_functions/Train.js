@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.getSyncedTrainsByNumber = void 0;
+exports.Train = exports.getSyncedTrainsByNumber = void 0;
 var index_1 = require("./index");
 var getSyncedTrainsByNumber = function (trainNum) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
@@ -55,3 +55,4 @@ var getSyncedTrainsByNumber = function (trainNum) { return __awaiter(void 0, voi
     });
 }); };
 exports.getSyncedTrainsByNumber = getSyncedTrainsByNumber;
+exports.Train = index_1.prisma.trainNumber;
