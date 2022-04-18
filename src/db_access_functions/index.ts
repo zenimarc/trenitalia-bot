@@ -135,24 +135,6 @@ export const getJourneysTrainByNumber = async (trainNumber: string) => {
   return train;
 };
 
-export const getJourneysTrainByNumberAndLocationId = async (
-  trainNumber: string,
-  locationId: number
-) => {
-  const train = await prisma.trainNumber.findFirst({
-    where: {
-      name: trainNumber,
-      departureLocationId: locationId,
-    },
-    include: {
-      journeys: { include: { stations: true } },
-      departureLocation: true,
-      arrivalLocation: true,
-    },
-  });
-  return train;
-};
-
 export const getTrainsByNumber = async (trainNum: string) => {
   return getSolutionsByTrainNumber(trainNum);
 };

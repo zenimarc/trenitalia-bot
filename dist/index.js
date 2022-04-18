@@ -109,7 +109,12 @@ app.get("/api/train", function (req, res) { return __awaiter(void 0, void 0, voi
                                         },
                                     ]
                                 },
-                                include: { stations: true }
+                                include: {
+                                    stations: {
+                                        include: { station: true },
+                                        orderBy: { arrivalTime: "asc" }
+                                    }
+                                }
                             },
                             departureLocation: true,
                             arrivalLocation: true
@@ -261,17 +266,18 @@ app.get("/api/autocomplete-station/:stationName", function (req, res) { return _
     });
 }); });
 app.get("/api/getTrainsFromStartAndEndLocations", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, startLocationID, endLocationID, _b, searchId, totalSolutions, solutions, solutionsData;
+    var _a, startLocationID, endLocationID, _b, searchId, totalSolutions, solutions, solutionsData, e_5;
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
+                _c.trys.push([0, 3, , 4]);
                 _a = req.query, startLocationID = _a.startLocationID, endLocationID = _a.endLocationID;
                 if (!(Number(startLocationID) && Number(endLocationID))) {
                     console.log(startLocationID, endLocationID);
-                    res.json({
-                        data: [],
-                        messages: "start and end locations must be integers"
-                    });
+                    return [2 /*return*/, res.json({
+                            data: [],
+                            messages: "start and end locations must be integers"
+                        })];
                 }
                 return [4 /*yield*/, (0, api_1.getSearchIDByDepartureAndArrivalStations)(Number(startLocationID), Number(endLocationID))];
             case 1:
@@ -282,13 +288,19 @@ app.get("/api/getTrainsFromStartAndEndLocations", function (req, res) { return _
                 solutionsData = solutions.map(function (sol) {
                     return (0, utils_1.extractTrainDataFromSolution)(sol);
                 });
-                res.json({
-                    data: solutionsData.filter(function (elem) { return Boolean(elem); }),
-                    messages: solutionsData.length !== totalSolutions
-                        ? "trovate " + solutionsData.length + " soluzioni su " + totalSolutions
-                        : ""
-                });
-                return [2 /*return*/];
+                return [2 /*return*/, res.json({
+                        data: solutionsData.filter(function (elem) { return Boolean(elem); }),
+                        messages: solutionsData.length !== totalSolutions
+                            ? "trovate " +
+                                solutionsData.length +
+                                " soluzioni su " +
+                                totalSolutions
+                            : ""
+                    })];
+            case 3:
+                e_5 = _c.sent();
+                return [2 /*return*/, res.sendStatus(400)];
+            case 4: return [2 /*return*/];
         }
     });
 }); });

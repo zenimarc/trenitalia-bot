@@ -79,7 +79,12 @@ app.get("/api/train", async (req, res) => {
               },
             ],
           },
-          include: { stations: true },
+          include: {
+            stations: {
+              include: { station: true },
+              orderBy: { arrivalTime: "asc" },
+            },
+          },
         },
         departureLocation: true,
         arrivalLocation: true,
@@ -176,33 +181,40 @@ app.get("/api/autocomplete-station/:stationName", async (req, res) => {
 });
 
 app.get("/api/getTrainsFromStartAndEndLocations", async (req, res) => {
-  const { startLocationID, endLocationID } = req.query;
-  if (!(Number(startLocationID) && Number(endLocationID))) {
-    console.log(startLocationID, endLocationID);
-    res.json({
-      data: [],
-      messages: "start and end locations must be integers",
-    } as ResponseAPI);
-  }
+  try {
+    const { startLocationID, endLocationID } = req.query;
+    if (!(Number(startLocationID) && Number(endLocationID))) {
+      console.log(startLocationID, endLocationID);
+      return res.json({
+        data: [],
+        messages: "start and end locations must be integers",
+      } as ResponseAPI);
+    }
 
-  const { searchId, totalSolutions } =
-    await getSearchIDByDepartureAndArrivalStations(
-      Number(startLocationID),
-      Number(endLocationID)
+    const { searchId, totalSolutions } =
+      await getSearchIDByDepartureAndArrivalStations(
+        Number(startLocationID),
+        Number(endLocationID)
+      );
+    //console.log(searchId, totalSolutions);
+    const solutions = await getSolutionsBySearchID(searchId, totalSolutions);
+    const solutionsData = solutions.map((sol) =>
+      extractTrainDataFromSolution(sol)
     );
-  //console.log(searchId, totalSolutions);
-  const solutions = await getSolutionsBySearchID(searchId, totalSolutions);
-  const solutionsData = solutions.map((sol) =>
-    extractTrainDataFromSolution(sol)
-  );
 
-  res.json({
-    data: solutionsData.filter((elem) => Boolean(elem)),
-    messages:
-      solutionsData.length !== totalSolutions
-        ? "trovate " + solutionsData.length + " soluzioni su " + totalSolutions
-        : "",
-  } as ResponseAPI);
+    return res.json({
+      data: solutionsData.filter((elem) => Boolean(elem)),
+      messages:
+        solutionsData.length !== totalSolutions
+          ? "trovate " +
+            solutionsData.length +
+            " soluzioni su " +
+            totalSolutions
+          : "",
+    } as ResponseAPI);
+  } catch (e) {
+    return res.sendStatus(400);
+  }
 });
 
 app.listen(port, () => {

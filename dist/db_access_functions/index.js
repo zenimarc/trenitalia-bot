@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.addCanceledTrain = exports.syncTrainByNumber = exports.getTrainsByNumber = exports.getJourneysTrainByNumberAndLocationId = exports.getJourneysTrainByNumber = exports.getUserTracking = exports.addUserTracking = exports.addUser = exports.prisma = void 0;
+exports.addCanceledTrain = exports.syncTrainByNumber = exports.getTrainsByNumber = exports.getJourneysTrainByNumber = exports.getUserTracking = exports.addUserTracking = exports.addUser = exports.prisma = void 0;
 var api_1 = require("../api");
 var index_js_1 = require("../../prisma/generated/prisma-client-js/index.js");
 var exceptions_1 = require("../utils/exceptions");
@@ -182,28 +182,6 @@ var getJourneysTrainByNumber = function (trainNumber) { return __awaiter(void 0,
     });
 }); };
 exports.getJourneysTrainByNumber = getJourneysTrainByNumber;
-var getJourneysTrainByNumberAndLocationId = function (trainNumber, locationId) { return __awaiter(void 0, void 0, void 0, function () {
-    var train;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, exports.prisma.trainNumber.findFirst({
-                    where: {
-                        name: trainNumber,
-                        departureLocationId: locationId
-                    },
-                    include: {
-                        journeys: { include: { stations: true } },
-                        departureLocation: true,
-                        arrivalLocation: true
-                    }
-                })];
-            case 1:
-                train = _a.sent();
-                return [2 /*return*/, train];
-        }
-    });
-}); };
-exports.getJourneysTrainByNumberAndLocationId = getJourneysTrainByNumberAndLocationId;
 var getTrainsByNumber = function (trainNum) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         return [2 /*return*/, (0, api_1.getSolutionsByTrainNumber)(trainNum)];
