@@ -21,6 +21,7 @@ import {
 import { extractTrainDataFromSolution } from "./utils/utils";
 import { ResponseAPI } from "./types";
 import { getSyncedTrainsByNumber, Train } from "./db_access_functions/train";
+import { time } from "console";
 
 var cron = require("node-cron");
 
@@ -293,6 +294,35 @@ main();
 //getJourneysTrainByNumber("2419").then((data) =>console.log(JSON.stringify(data)));
 
 //getTrainsByNumber("35");
+/*
+const addByNum = async (trainName: string) => {
+  try {
+    const data = await getTrainsByNumber(trainName);
+    console.log("aggiungo", trainName);
+    for (const train of data) {
+      const output = await addUserTracking(
+        "admin",
+        train.transportMeanName,
+        train.transportDenomination.toLocaleLowerCase(),
+        Number(train.startLocation.locationId)
+      );
+      console.log("tutto ok per", trainName);
+    }
+  } catch (e) {
+    console.log(e);
+    console.log("errore per", trainName);
+  }
+};
+(async () => {
+  function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  for (let i = 0; i < 20000; i++) {
+    await addByNum(String(i));
+    await sleep(1000);
+  }
+})();
+*/
 
 cron.schedule("45 21,22 * * *", () => {
   console.log("running a daily task");
