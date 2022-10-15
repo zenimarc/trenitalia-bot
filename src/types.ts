@@ -72,6 +72,7 @@ export interface RespObjectToSolutionsBySearchID {
 }
 
 export interface UserTracking {
+  id: string;
   name: string;
   classification: string;
   departureLocationId: number;

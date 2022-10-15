@@ -45,9 +45,10 @@ app.get("/api/trainNumber/:id", async (req, res) => {
 // to get trains by trainNumber and startLocationId
 app.get("/api/train", async (req, res) => {
   try {
+    const trainId = req.query.trainId as string;
     const trainNumber = req.query.trainNumber as string;
     const startLocationId = Number(req.query.startLocationId);
-    if (isNaN(startLocationId)) {
+    if (!trainId && isNaN(startLocationId)) {
       return res
         .status(400)
         .send({ error: "startLocationId must be an integer" });
@@ -56,10 +57,12 @@ app.get("/api/train", async (req, res) => {
     const endDateString = req.query.endDate;
 
     const train = await Train.findFirst({
-      where: {
-        name: trainNumber,
-        departureLocationId: startLocationId,
-      },
+      where: trainId
+        ? { id: trainId }
+        : {
+            name: trainNumber,
+            departureLocationId: startLocationId,
+          },
       include: {
         journeys: {
           where: {

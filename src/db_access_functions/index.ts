@@ -112,6 +112,7 @@ export const getUserTracking = async (username: string) => {
   }
   return user.trackedTrains.map((x) => {
     return {
+      id: x.trainNumberId,
       name: x.trainNumber.name,
       classification: x.trainNumber.classification,
       departureLocationId: x.trainNumber.departureLocationId,
