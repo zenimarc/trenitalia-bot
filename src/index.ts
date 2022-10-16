@@ -7,6 +7,7 @@ import {
   getTrainsByNumber,
   addCanceledTrain,
 } from "./db_access_functions";
+import { DayOfAWeekString } from "./utils/utils";
 
 import { startDeamon } from "./deamon";
 
@@ -18,10 +19,14 @@ import {
   getSolutionsBySearchID,
   getStationNameAutocompletion,
 } from "./api";
-import { extractTrainDataFromSolution } from "./utils/utils";
+import {
+  dateDaysNamesToNumber,
+  extractTrainDataFromSolution,
+} from "./utils/utils";
 import { ResponseAPI } from "./types";
 import { getSyncedTrainsByNumber, Train } from "./db_access_functions/train";
 import { time } from "console";
+import { Journey } from "../prisma/generated/prisma-client-js";
 
 var cron = require("node-cron");
 
@@ -55,6 +60,18 @@ app.get("/api/train", async (req, res) => {
     }
     const startDateString = req.query.startDate;
     const endDateString = req.query.endDate;
+    const weekDays = req.query.weekDays
+      ? JSON.parse(String(req.query.weekDays))
+      : undefined;
+    const weekDaysCodes = weekDays
+      ? new Set(
+          weekDays.map((day: DayOfAWeekString) => dateDaysNamesToNumber(day))
+        )
+      : new Set();
+
+    const isInWeekDays = (journey: Journey) => {
+      return weekDaysCodes.has(journey.date.getDay());
+    };
 
     const train = await Train.findFirst({
       where: trainId
@@ -94,6 +111,12 @@ app.get("/api/train", async (req, res) => {
         arrivalLocation: true,
       },
     });
+    if (train !== null && weekDays && weekDays.length !== 0) {
+      return res.send({
+        ...train,
+        journeys: [...train.journeys.filter(isInWeekDays)],
+      });
+    }
     return res.send(train);
   } catch (e) {
     console.log(e);

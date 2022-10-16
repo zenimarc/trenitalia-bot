@@ -54,7 +54,6 @@ export const addUserTracking = async (
       },
     },
   });
-
   let addedTrainID = null;
   if (!Train) {
     addedTrainID = await syncTrainByNumber(
@@ -305,7 +304,7 @@ export const addCanceledTrain = async (
           },
         },
       },
-      date: new Date().toISOString(),
+      date: new Date(new Date().setHours(0, 0, 0, 0)).toISOString(), //assign aribtrarly to midnight just because i do not receive info in the response of a canceled train
       delay: 0,
       isCanceled: true,
     },
