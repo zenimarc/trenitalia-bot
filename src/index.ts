@@ -10,7 +10,7 @@ import {
 import { DayOfAWeekString } from "./utils/utils";
 
 import { startDeamon } from "./deamon";
-
+import fetch from "cross-fetch";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
@@ -27,6 +27,14 @@ import { ResponseAPI } from "./types";
 import { getSyncedTrainsByNumber, Train } from "./db_access_functions/train";
 import { time } from "console";
 import { Journey } from "../prisma/generated/prisma-client-js";
+import {
+  ViaggiaTrenoAPIUrl,
+  ViaggiaTrenoDettaglioTrattaPath,
+  ViaggiaTrenoElencoStazioniPath,
+  ViaggiaTrenoElencoTrattePath,
+  ViaggiaTrenoMeteoPath,
+} from "./constants";
+import axios from "axios";
 
 var cron = require("node-cron");
 
@@ -240,7 +248,56 @@ app.get("/api/getTrainsFromStartAndEndLocations", async (req, res) => {
           : "",
     } as ResponseAPI);
   } catch (e) {
-    return res.sendStatus(400);
+    return res.sendStatus(500);
+  }
+});
+
+app.get("/api/viaggiatreno/elencoStazioni", async (req, res) => {
+  try {
+    const resp = await axios.get(
+      ViaggiaTrenoAPIUrl + ViaggiaTrenoElencoStazioniPath
+    );
+    return res.send(resp.data);
+  } catch (e) {
+    console.log(e);
+    return res.sendStatus(500);
+  }
+});
+
+app.get("/api/viaggiatreno/elencoTratte", async (req, res) => {
+  try {
+    const resp = await axios.get(
+      ViaggiaTrenoAPIUrl + ViaggiaTrenoElencoTrattePath + new Date().getTime()
+    );
+    return res.send(resp.data);
+  } catch (e) {
+    console.log(e);
+    return res.sendStatus(500);
+  }
+});
+
+app.get("/api/viaggiatreno/datiMeteo", async (req, res) => {
+  try {
+    const resp = await axios.get(ViaggiaTrenoAPIUrl + ViaggiaTrenoMeteoPath);
+    return res.send(resp.data);
+  } catch (e) {
+    console.log(e);
+    return res.sendStatus(500);
+  }
+});
+
+app.get("/api/viaggiatreno/dettaglioTratta", async (req, res) => {
+  try {
+    const { tratta1, tratta2 } = req.query;
+    const resp = await axios.get(
+      ViaggiaTrenoAPIUrl +
+        ViaggiaTrenoDettaglioTrattaPath +
+        `${tratta1}/${tratta2}/ES*,IC,EXP,EC,EN/null`
+    );
+    return res.send(resp.data);
+  } catch (e) {
+    console.log(e);
+    return res.sendStatus(500);
   }
 });
 
