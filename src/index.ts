@@ -33,6 +33,7 @@ import {
   ViaggiaTrenoElencoStazioniPath,
   ViaggiaTrenoElencoTrattePath,
   ViaggiaTrenoMeteoPath,
+  ViaggiaTrenoRSSNowPath,
 } from "./constants";
 import axios from "axios";
 
@@ -252,6 +253,7 @@ app.get("/api/getTrainsFromStartAndEndLocations", async (req, res) => {
   }
 });
 
+// VIAGGIATRENO PROXY PART
 app.get("/api/viaggiatreno/elencoStazioni", async (req, res) => {
   try {
     const resp = await axios.get(
@@ -279,6 +281,16 @@ app.get("/api/viaggiatreno/elencoTratte", async (req, res) => {
 app.get("/api/viaggiatreno/datiMeteo", async (req, res) => {
   try {
     const resp = await axios.get(ViaggiaTrenoAPIUrl + ViaggiaTrenoMeteoPath);
+    return res.send(resp.data);
+  } catch (e) {
+    console.log(e);
+    return res.sendStatus(500);
+  }
+});
+
+app.get("/api/viaggiatreno/infomobilita", async (req, res) => {
+  try {
+    const resp = await axios.get(ViaggiaTrenoAPIUrl + ViaggiaTrenoRSSNowPath);
     return res.send(resp.data);
   } catch (e) {
     console.log(e);

@@ -9,3 +9,4 @@ export const ViaggiaTrenoElencoTrattePath =
   "/elencoTratte/0/6/ES*,IC,EXP,EC,EN/null/";
 export const ViaggiaTrenoMeteoPath = "/datimeteo/0";
 export const ViaggiaTrenoDettaglioTrattaPath = "/dettagliTratta/0/";
+export const ViaggiaTrenoRSSNowPath = "/infomobilitaRSS/false";
