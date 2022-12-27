@@ -407,7 +407,7 @@ const addByNum = async (trainName: string) => {
 })();
 */
 
-cron.schedule("45 21,22 * * *", () => {
+cron.schedule("45 12,21,22 * * *", () => {
   console.log("running a daily task");
   startDeamon();
 });
