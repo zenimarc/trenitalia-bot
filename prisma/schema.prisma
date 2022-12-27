@@ -74,3 +74,12 @@ model User {
   username      String              @unique
   trackedTrains UserTrackTracking[]
 }
+
+model ViaggiaTrenoResponses {
+  id              String   @id @default(uuid())
+  date            DateTime
+  elencoTratte    String
+  elencoStazioni  String
+  meteo           String
+  dettagliotratte String
+}
