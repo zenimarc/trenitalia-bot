@@ -10,8 +10,7 @@ import {
 import { DayOfAWeekString } from "./utils/utils";
 
 import { startDeamon } from "./deamon";
-import fetch from "cross-fetch";
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import helmet from "helmet";
 import {
@@ -36,7 +35,12 @@ import {
   ViaggiaTrenoRSSNowPath,
 } from "./constants";
 import axios from "axios";
-import { startVTDeamon } from "./viaggiatrenoDeamon";
+import {
+  updateCurrentInfomobilita,
+  getInfomobilita,
+  startVTDeamon,
+  infoMobilitaDeamonJob,
+} from "./viaggiatrenoDeamon";
 
 var cron = require("node-cron");
 
@@ -68,7 +72,14 @@ app.get("/api/train", async (req, res) => {
         .status(400)
         .send({ error: "startLocationId must be an integer" });
     }
-    const startDateString = req.query.startDate;
+    let startDateString = req.query.startDate;
+    // if no startDate provided I create one to 100 days before today
+    if (!startDateString) {
+      const _180DaysBeforeToday = new Date(
+        new Date().getTime() - 180 * 24 * 60 * 60 * 1000
+      );
+      startDateString = _180DaysBeforeToday.toISOString();
+    }
     const endDateString = req.query.endDate;
     const weekDays = req.query.weekDays
       ? JSON.parse(String(req.query.weekDays))
@@ -289,15 +300,30 @@ app.get("/api/viaggiatreno/datiMeteo", async (req, res) => {
   }
 });
 
-app.get("/api/viaggiatreno/infomobilita", async (req, res) => {
-  try {
-    const resp = await axios.get(ViaggiaTrenoAPIUrl + ViaggiaTrenoRSSNowPath);
-    return res.send(resp.data);
-  } catch (e) {
-    console.log(e);
-    return res.sendStatus(500);
+app.get(
+  "/api/viaggiatreno/infomobilita",
+  async (req: Request, res: Response) => {
+    try {
+      const dateString = req.query.date;
+      let dateObj: Date;
+      if (!dateString) {
+        dateObj = new Date();
+        await infoMobilitaDeamonJob();
+      } else {
+        dateObj = new Date(dateString as string);
+      }
+      const data = await getInfomobilita(dateObj);
+      if (data === null) {
+        return res.sendStatus(404);
+      }
+      return res.send(data);
+      //const resp = await axios.get(ViaggiaTrenoAPIUrl + ViaggiaTrenoRSSNowPath);
+    } catch (e) {
+      console.log(e);
+      return res.sendStatus(500);
+    }
   }
-});
+);
 
 app.get("/api/viaggiatreno/dettaglioTratta", async (req, res) => {
   try {

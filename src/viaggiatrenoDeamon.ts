@@ -9,7 +9,17 @@ const { JSDOM } = jsdom;
 
 //const respTest = fs.readFileSync(path.join(__dirname, "resp.txt")).toString();
 
-const deamonJob = async (jsonData: {}) => {
+export const getInfomobilita = async (date: Date) => {
+  const convertedDate = new Date(new Date(date).setHours(0, 0, 0, 0));
+  const res = await prisma.vTInfomobilita.findUnique({
+    where: {
+      date: convertedDate,
+    },
+  });
+  return res;
+};
+
+export const updateCurrentInfomobilita = async (jsonData: {}) => {
   try {
     const resp = await axios.get(ViaggiaTrenoAPIUrl + ViaggiaTrenoRSSNowPath);
     const data = resp.data;
@@ -34,12 +44,21 @@ const deamonJob = async (jsonData: {}) => {
   }
 };
 
+let infoJson = {};
+export const infoMobilitaDeamonJob = async () => {
+  try {
+    infoJson = await updateCurrentInfomobilita(infoJson);
+    saveToDB(infoJson);
+  } catch (e) {
+    console.log("error in VTdeamonJob");
+  }
+};
+
 export const startVTDeamon = async () => {
-  let infoJson = {};
+  await infoMobilitaDeamonJob();
 
   cron.schedule("*/20 * * * *", async () => {
-    infoJson = await deamonJob(infoJson);
-    saveToDB(infoJson);
+    await infoMobilitaDeamonJob();
   });
   // Schedule the additional task to run once a day at 23:58 to clear avvisi
   cron.schedule("58 23 * * *", () => {
@@ -49,19 +68,23 @@ export const startVTDeamon = async () => {
 };
 
 const saveToDB = async (infoJson: {}) => {
-  // set date as today at midnight
-  const date = new Date(new Date().setHours(0, 0, 0, 0));
-  const stringifiedJson = JSON.stringify(infoJson);
-  await prisma.viaggiaTrenoResponses.upsert({
-    where: {
-      date: date,
-    },
-    create: {
-      date: date,
-      infomobilita: stringifiedJson,
-    },
-    update: {
-      infomobilita: stringifiedJson,
-    },
-  });
+  try {
+    // set date as today at midnight
+    const date = new Date(new Date().setHours(0, 0, 0, 0));
+    const stringifiedJson = JSON.stringify(infoJson);
+    await prisma.vTInfomobilita.upsert({
+      where: {
+        date: date,
+      },
+      create: {
+        date: date,
+        infomobilita: stringifiedJson,
+      },
+      update: {
+        infomobilita: stringifiedJson,
+      },
+    });
+  } catch (e) {
+    console.log("error saving json infomobilita before midnight");
+  }
 };

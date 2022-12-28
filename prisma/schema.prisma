@@ -75,12 +75,17 @@ model User {
   trackedTrains UserTrackTracking[]
 }
 
-model ViaggiaTrenoResponses {
+model VTInfomobilita {
+  id           String   @id @default(uuid())
+  date         DateTime @unique
+  infomobilita String
+}
+
+model ViaggiaTrenoResp {
   id              String   @id @default(uuid())
   date            DateTime @unique
-  elencoTratte    String?
-  elencoStazioni  String?
-  meteo           String?
-  dettagliotratte String?
-  infomobilita    String
+  elencoTratte    String
+  elencoStazioni  String
+  meteo           String
+  dettagliotratte String
 }
