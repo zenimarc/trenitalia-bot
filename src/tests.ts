@@ -6,6 +6,7 @@ import {
 import { startDeamon } from "./deamon";
 import { ResponseAutocompletionStation } from "./types";
 import { extractTrainDataFromSolution, sleep } from "./utils/utils";
+import { startVTDeamon } from "./viaggiatrenoDeamon";
 
 const test1 = async () => {
   const startlocationID = (await getStationNameAutocompletion("domodossola"))[0]
@@ -30,7 +31,7 @@ const test1 = async () => {
 };
 
 const main = async () => {
-  await startDeamon();
+  await startVTDeamon();
   console.log("demone finito");
 };
 

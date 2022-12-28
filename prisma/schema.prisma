@@ -77,9 +77,10 @@ model User {
 
 model ViaggiaTrenoResponses {
   id              String   @id @default(uuid())
-  date            DateTime
-  elencoTratte    String
-  elencoStazioni  String
-  meteo           String
-  dettagliotratte String
+  date            DateTime @unique
+  elencoTratte    String?
+  elencoStazioni  String?
+  meteo           String?
+  dettagliotratte String?
+  infomobilita    String
 }

@@ -36,6 +36,7 @@ import {
   ViaggiaTrenoRSSNowPath,
 } from "./constants";
 import axios from "axios";
+import { startVTDeamon } from "./viaggiatrenoDeamon";
 
 var cron = require("node-cron");
 
@@ -423,5 +424,10 @@ cron.schedule("45 12,21,22 * * *", () => {
   console.log("running a daily task");
   startDeamon();
 });
+
+(async () => {
+  //wrapping and calling it
+  startVTDeamon();
+})();
 
 //startDeamon();
