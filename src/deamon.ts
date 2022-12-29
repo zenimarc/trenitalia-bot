@@ -7,7 +7,7 @@ import { UserTracking } from "./types";
 import { sleep } from "./utils/utils";
 
 const MAX_RETRIES = 3;
-const WAIT_AFTER_FIRST_TRY = 1 * 1000; // 10 minutes
+const WAIT_AFTER_FIRST_TRY = 1 * 1000; // 1 minute
 const WAIT_IN_RETRY_SESSION = 1 * 1000; // 1 minute
 
 export const startDeamon = async () => {

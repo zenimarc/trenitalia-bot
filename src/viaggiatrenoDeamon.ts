@@ -37,7 +37,7 @@ export const updateCurrentInfomobilita = async (jsonData: {}) => {
       },
       {}
     );
-    return { ...jsonData, output };
+    return { ...jsonData, ...output };
   } catch (e) {
     console.log(e);
     return jsonData;
